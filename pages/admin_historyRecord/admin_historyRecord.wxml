@@ -1,9 +1,0 @@
-<!--pages/historyRecord/historyRecord.wxml-->
-<scroll-view>
-  <view class='historyTitle'>本周为第{{nowWeek}}</view>
-  <view class='blockWrap'>
-    <block wx:for='{{info}}' wx:key="unique">
-      <view bindtap='weekNumInfo' data-week="{{item.weekNum}}">{{item.weekNum}}</view>
-    </block>
-  </view>
-</scroll-view>
