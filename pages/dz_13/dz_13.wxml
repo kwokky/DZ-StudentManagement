@@ -1,0 +1,19 @@
+<!--pages/dz_13/dz_13.wxml-->
+<view class="container">
+  <view class="student-wrap">
+    <navigator url=''>学生1</navigator>
+    <navigator url=''>学生2</navigator>
+    <navigator url=''>学生3</navigator>
+  </view>
+  <view class="student-wrap">
+    <navigator url=''>学生4</navigator>
+    <navigator url=''>学生5</navigator>
+    <navigator url=''>学生6</navigator>
+  </view>
+  <view class="student-wrap">
+    <navigator url=''>学生7</navigator>
+    <navigator url=''>学生8</navigator>
+  </view>
+  <button class='sub'>已全部确认</button>
+</view>
+

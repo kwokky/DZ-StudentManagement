@@ -1,0 +1,56 @@
+/* pages/dz_10/dz_10.wxss */
+.container {
+  padding:0;
+  padding-top:10px;
+}
+
+/*学生信息*/
+.student-wrap {
+  flex-direction: row;
+  width:94%;
+  padding-top: 6%;
+
+}
+.student-wrap navigator {
+  border-radius: 4%;
+  width:28%;
+  height:33px;
+  float: left;
+  line-height: 33px;
+  text-align: center;
+  margin-left: 4%;
+  margin-bottom: 5%;
+}
+.che-wrap{
+  justify-content: center;
+  align-items: center;
+  float: left;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+.che-wrap text{
+}
+.check{
+  width:25rpx;
+  height: 25rpx;
+  float: left;
+  margin-top: 7rpx;
+  background:green;
+  margin:8rpx;
+}
+.uncheck{
+  width:25rpx;
+  height: 25rpx;
+  float: left;
+  margin-top: 7rpx;
+  background:red;
+  margin:8rpx;
+}
+.a{
+  border:1px solid green;
+  color: green;
+}
+.b{
+ border:1px solid red;
+ color: red;
+}

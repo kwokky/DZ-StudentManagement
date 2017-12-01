@@ -1,0 +1,10 @@
+<!--pages/dz_18/dz_18.wxml-->
+<view class="container">
+    <block wx:for="{{dromCount}}" wx:key="unique">
+      <navigator url='../dz_19/dz_19?block={{item.blockid}}' hover-class='none'>
+          <image src='../../sources/images/dormblock.png' class='img1' mode="widthFix"></image>
+          <text>{{item.dromName}}</text>
+          <image src='../../sources/images/youjian.png' class='img2' mode="widthFix"></image>
+      </navigator>
+    </block>
+</view>

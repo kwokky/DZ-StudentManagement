@@ -1,0 +1,21 @@
+<!--pages/dz_17/dz_17.wxml-->
+<view class="container" wx:if="{{backflag == 1}}">
+  <view class='location' wx:if='{{!flag}}' bindtap='cd'>
+    <text>当前位置：</text>
+    <text>{{nowPlace}}</text>
+ </view>
+  <view class='location' wx:if='{{!flag}}'>
+    <text>家庭位置：</text>
+    <text>{{homePlace}}</text>
+ </view> 
+ <view class='location' wx:if='{{flag}}'>
+    <text>确定位置：</text>
+    <text>{{homePlace}}</text>
+ </view>
+ 
+<button class='sub' bindtap='ishome' disabled='{{btnstatus ? flag ? true : false : true}}' wx:if="{{backflag == 1}}">{{btnstatus ? flag ? "已确认" : "确认到家" : '当前不可用'}}</button>
+</view>
+
+<view wx:if="{{backflag == 0}}" style="margin:0 auto;font-weight:bold;text-align:center;margin-top:10px;">本周你没有申请回家</view>
+
+

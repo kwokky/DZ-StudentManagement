@@ -1,0 +1,32 @@
+
+<view class="search-wrap" bindtap='searchBtnstatus1' wx:if="{{flag==true}}">
+  <form bindsubmit="search">
+    <button hidden='{{search}}' form-type='submit' size='mini' class='search-button' formType="submit">搜索</button>
+    <input placeholder='输入学生姓名/班级' class="{{search ? 'search-inpulong' : 'search-inputshort'}}" confirm-type="search" bindconfirm="search" bindinput="bindinput"></input>
+    </form>
+</view>
+<view bindtap='searchBtnstatus2'>
+  <view style='text-align:center;font-size:30rpx;margin-top:10px;width:100%' wx:if="{{flag==true}}">自行离校: {{proper}}人     公交: {{bus}}人     客车: {{car}}人   总计: {{proper+bus+car}}人</view>
+  <view class="container" wx:if="{{flag == true}}">
+      <view class="table">
+          <view class="tr">
+              <view class="th">班级</view>
+              <view class="th">姓名</view>
+              <view class="th">出行方式</view>
+          </view>
+          <block wx:for="{{allClassHomeCount}}" wx:key="unique">
+            <view class="tr">
+              <view class="td">{{item.iclass}}</view>
+              <view class="td">{{item.username}}</view>
+              <view class="td">{{item.tripmode}}</view>
+            </view>
+          </block> 
+      </view>
+      <view class="page" wx:if="{{flag == true}}">
+        <button bindtap='previous'>上一页</button>
+          <text class="pagenum">{{page}}/{{pages}}</text>
+        <button bindtap='next'>下一页</button>
+      </view> 
+  </view>
+</view>
+  <view wx:if="{{flag==false}}" style="text-align:center;font-weight:bold;margin-top:10px;">本周没有人提交回家</view>

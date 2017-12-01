@@ -1,0 +1,23 @@
+<!--pages/dz_7/dz_7.wxml-->
+<view class="le-wrap">
+  <view class="le-row">
+    <text class="le-title">姓名:</text>
+    <text class='le-val le-long-width'>{{checkhomeinfo.username}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">到家时间:</text>
+    <text class='le-val'>{{checkhomeinfo.contime}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">是否确认:</text>
+    <text class='le-val'>{{checkhomeinfo.contime ? '是' : '否'}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">确认地点:</text>
+    <text class='le-val'>{{checkhomeinfo.conadress}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">家庭地址:</text>
+    <text class='le-val'>{{checkhomeinfo.adress}}</text>
+  </view>
+</view>

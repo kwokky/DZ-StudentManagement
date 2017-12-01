@@ -1,0 +1,18 @@
+/* pages/dz_17/dz_17.wxss */
+.container {
+  padding:0;
+  padding-top:10px;
+  width:100%;
+}
+/*位置*/
+.location {
+  margin-top: 20rpx;
+  font-size: 15px;
+}
+/*确认回家*/
+.sub {
+  background: #393939;
+  color: #fff;
+  width:90%;
+  margin-top: 100rpx;
+}

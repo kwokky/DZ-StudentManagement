@@ -1,0 +1,26 @@
+<!--pages/admin_classshool/admin_classshool.wxml-->
+<view>
+  <view class="container">
+    <view class="table">
+        <view class="tr">
+            <view class="th">班级</view>
+            <view class="th">回家人数</view>
+            <view class="th">确认/未确认人数</view>
+            <view class="th">查看</view>
+        </view>
+        <block wx:for="{{classhome_list}}" wx:key="unique">
+          <view class="tr" bindtap='showInfo' data-week='{{week}}' data-class='{{item.class}}'>
+            <view class="td">{{item.class}}</view>
+            <view class="td">{{item.allnum}}</view>
+            <view class="td">{{item.checknum}}/{{item.unchecknum}}</view>
+            <view class="td check">查看</view>
+          </view>
+        </block>  
+    </view>
+     <view class="page">
+      <button data-id='0' bindtap='page'>上一页</button>
+      <button data-id='1' bindtap='page'>下一页</button>
+    </view> 
+</view>
+
+</view>

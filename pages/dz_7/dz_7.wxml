@@ -1,0 +1,24 @@
+<!--pages/dz_7/dz_7.wxml-->
+<view class="le-wrap">
+  <view class="le-row">
+    <text class="le-title">姓名:</text>
+    <text class='le-val'>{{leaveinfo.username}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">开始日期:</text>
+    <text class='le-val'>{{leaveinfo.begintime}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">结束日期:</text>
+    <text class='le-val'>{{leaveinfo.endtime}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">请假原因:</text>
+    <text class='le-val'>{{leaveinfo.reason}}</text>
+  </view>
+</view>
+<view class="le-page" wx:if="{{leaveinfo.status==0 && role=='teacher' }}">
+  <view class='button-page prvious' data-id='{{leaveinfo.id}}' data-val="1" bindtap="upstatus">同意</view>
+  <view class='button-page next' data-val="2" bindtap="upstatus">不同意</view>
+</view>
+<view wx:if="{{!leaveinfo.status==0}}" style='width:100%;text-align:center;font-weight:bold;'>{{leaveinfo.status==1 ? '已同意' : ''}}{{leaveinfo.status==2 ? '未同意' : ''}}</view>

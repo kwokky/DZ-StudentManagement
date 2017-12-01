@@ -1,0 +1,105 @@
+<!--pages/dz_5/dz_5.wxml-->
+<import src="../../dist/weCropper.wxml"/>
+    <template is="weCropper" data="{{...cropperOpt}}" wx:if="{{distflag}}"/>
+
+
+   <form bindsubmit='formSubmit' wx:if="{{!distflag}}">
+<view style="{{bed ? 'display:none' : ''}}">
+<view class='student-info-wrap-top'>
+  <image class="stu-img" src="{{user.photo ? user.photo :'../../sources/images/defaultphoto.jpg'}}" bindtap='checkphoto' background-size="cover"></image>
+  <view class='student-lock' wx:if="{{my}}">{{user.status==1 || my==false ? '已锁定' : '未锁定'}}</view>
+ 
+  <view class="student-row">
+    <text class="student-title">姓名:</text>
+    <input type='text' value='{{user.username}}' disabled='{{user.status==1 || my==false  ? true : false}}' name="username" class='stu-val stu-long-width'></input  >
+  </view>
+
+  <view class="student-row">
+    <text class="student-title">性别:</text>
+      <input disabled='{{true}}' wx:if="{{user.status==1 || my==false}}"  type='text' value='{{user.sex}}'class='stu-val stu-long-width'></input>  
+    <radio-group name="sex"  class="radio-group" bindchange="sexChange" class='stu-val stu-long-width' wx:if="{{user.status==0  && my==true }}">
+    <radio value="男" checked="{{user.sex=='男'?true : user.sex=='女' ? false : true}}"  />男
+    <radio value="女" checked="{{user.sex=='女'?true:false}}" style='margin-left:10rpx;'  />女
+</radio-group>
+  </view>
+
+  <view class="student-row">
+    <text class="student-title">民族:</text>
+    <picker disabled='{{user.status==1 || my==false  ? true : false}}'   bindchange="bindnationChange" name="nation" value="{{nationArray[nationIndex]}}" range="{{nationArray}}" class='stu-val stu-long-width'>
+      {{nationArray[nationIndex]}}
+  </picker>
+  </view>
+
+    <view class="student-row">
+    <text class="student-title">宿舍:</text>
+    
+<input disabled='{{user.status==1 || my==false  ? true : false}}'  type='text' name="dorm_id" value='{{user.dorm_id}}' class='stu-val stu-long-width'></input>
+  <label class="lookbed" bindtap='showbed' wx:if="{{user.status==0&&my==true }}">（宿舍怎么写？）</label>
+  </view>
+  
+</view>
+
+
+
+<view class='student-info-wrap'>  
+  <view class="student-row">
+    <text class="student-title">班级:</text>
+    <picker disabled='{{user.status==1 || my==false  ? true : false}}'   bindchange="bindclassChange" name="iclass" value="{{classArray[1][classIndex] ? classArray[1][classIndex] : '' }}" range="{{classArray[0]}}" class='stu-val stu-long-width'>
+      {{classArray[0][classIndex] ? classArray[0][classIndex] : '请选择'}}
+  </picker>
+  </view>
+<view class="student-row">
+    <text class="student-title">专业:</text>
+    <input disabled='{{user.status==1 || my==false  ? true : false}}' name="major"  type='text' value='{{user.major}}'class='stu-val stu-long-width'></input>
+  </view>
+<view class="student-row">
+    <text class="student-title">学号:</text>
+    <input disabled='{{user.status==1 || my==false  ? true : false}}' name="" type='text' value='{{user.stuid}}'class='stu-val stu-long-width'></input>
+  </view>
+
+  <view class="student-row">
+    <text class="student-title">出生日期:</text>
+
+      <picker disabled='{{user.status==1 || my==false  ? true : false}}'  mode="selector" name="rili" range='{{rili}}' value="{{rili[riliindex]}}" bindchange="bindriliChange" class='stu-long-width2' >
+      <view class="picker">
+        {{rili[riliindex]}}
+      </view>
+    </picker>
+      <picker disabled='{{user.status==1 || my==false  ? true : false}}'  mode="date" name="birthday" value="{{user.birthday ? user.birthday :''}}" bindchange="bindBirthdayChange" class='stu-long-width2' >
+      <view class="picker">
+        {{user.birthday ? user.birthday :'请选择'}}
+      </view>
+    </picker>
+  </view>
+  
+
+  <view class="student-row">
+    <text class="student-title">手机号:</text>
+    <input disabled='{{user.status==1 || my==false  ? true : false}}' type='number' name="stutel" value='{{user.stutel}}' class='stu-val stu-long-width' bindtap='phoneCall' data-tel='{{user.stutel}}'></input>
+  </view>
+
+  <view class="student-row">
+    <text class="student-title">家长姓名:</text>
+    <input disabled='{{user.status==1 || my==false  ? true : false}}'  type='text' name="famname" value='{{user.famname}}' class='stu-val stu-long-width'></input>
+  </view>
+  <view class="student-row">
+    <text class="student-title">家长手机号:</text>
+    <input disabled='{{user.status==1 || my==false  ? true : false}}' type='number' name="famtel" value='{{user.famtel}}'  bindtap='phoneCall' data-tel='{{user.famtel}}' class='stu-val stu-long-width'></input>
+  </view>
+  <view class="student-row">
+    <text class="student-title">身份证号:</text>
+    <input disabled='{{user.status==1 || my==false  ? true : false}}'  type='idcard' name="idcate"  value='{{user.idcate}}' class='stu-val stu-long-width' style='width:450rpx'></input>
+  </view>
+  <view class="student-row" bindtap="chooseLocation">
+    <text class="student-title">家庭住址:</text>
+    <input disabled='{{true}}'   type='text' name="adress" value='{{user.adress}}' class='stu-val stu-long-width' style='width:450rpx'></input>
+  </view>
+</view>
+    <button wx:if="{{user.status==0&&my==true }}" formType='submit' style='background:#1AAD19;color:#FFF;width:92%;margin-bottom: 20px;'>提交</button>
+</view>
+</form>
+
+<view class="dorm" wx:if="{{bed}}" bindtap='showbed'>
+如3-601-8 代表3号宿舍楼，601宿舍，8号床位，请按要求填写，床位分布图如下：
+<image src='../../sources/images/dorm.jpg' mode='widthFix' style="width:500rpx;margin-top:20rpx;" ></image>
+</view> 

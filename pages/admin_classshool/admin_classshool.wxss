@@ -1,0 +1,49 @@
+/* pages/admin_classbackhome/admin_classbackhome.wxss */
+/*容器*/
+.container {
+  padding:0;
+  padding-top:10px;
+  width:100%;
+}
+.table {
+  border:1px solid #dadada;
+  border-right: 0;
+  border-bottom: 0;
+  width: 95%;
+}
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.th,.td {
+  padding: 7px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width:100%;
+  font-size: 33rpx;
+}
+.th {
+  font-weight: 600;
+  font-size: 35rpx;
+
+}
+/*分页*/
+.page {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+}
+.page,button {
+  font-size: 15px;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding-left:40px;
+  padding-right:40px;
+}
+/*周末回家 查看  */
+.check {
+  color:blue;
+  text-decoration:underline;
+}

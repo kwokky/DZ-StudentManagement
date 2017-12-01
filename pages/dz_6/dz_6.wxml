@@ -1,0 +1,24 @@
+<!--pages/dz_6/dz_6.wxml-->
+<view class="leave-list-wrap" wx:if="{{flag==2}}">
+  <view class="leave-list-tr">
+    <view class='leave-list-row th'>姓名</view>
+    <view class='leave-list-row th second-width'>日期</view>
+    <view class='leave-list-row th three-width'>操作</view>
+  </view>
+  <block wx:for="{{leave_info}}" wx:key="unique">
+    <view class="leave-list-tr">
+      <view class='leave-list-row'>{{item.username}}</view>
+      <view class='leave-list-row second-width'>{{item.opplytime}}</view>
+      <view  class='leave-list-row check three-width' wx:if="{{item.status}}"><navigator class="yichuli" url="../dz_7/dz_7?id={{item.id}}">(已处理)</navigator></view><view   class='leave-list-row check three-width'  wx:else><navigator class="weichuli" url="../dz_7/dz_7?id={{item.id}}">(未处理)</navigator></view>
+    </view>
+  </block>
+</view>
+<view class="container">
+<view class="page" wx:if="{{flag==2}}">
+  <button bindtap='previous'>上一页</button>
+  <text class="pagenum">{{page}}/{{pages}}</text>
+  <button bindtap='next'>下一页</button>
+</view>
+</view>
+ <view wx:if="{{flag==0}}" style='width:100%;text-align:center;font-weight:bold;margin-top:10px;'>本班没有请假记录</view>
+  <view wx:if="{{flag==1}}" style='width:100%;text-align:center;font-weight:bold;margin-top:10px;'>你没有请假记录</view>

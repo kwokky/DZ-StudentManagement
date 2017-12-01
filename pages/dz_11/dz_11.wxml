@@ -1,0 +1,36 @@
+<!--pages/dz_11/dz_11.wxml-->
+
+<view class="search-wrap" bindtap='searchBtnstatus1' wx:if="{{flag==true}}">
+  <form bindsubmit="search">
+    <button hidden='{{search}}' form-type='submit' size='mini' class='search-button' formType="submit">搜索</button>
+    <input placeholder='输入学生姓名/班级' class="{{search ? 'search-inpulong' : 'search-inputshort'}}" confirm-type="search" bindconfirm="search" bindinput="bindinput"></input>
+    </form>
+</view>
+<view bindtap='searchBtnstatus2'>
+  <view class="container" wx:if="{{flag==true}}">
+      <view class="table">
+          <view class="tr">
+              <view class="th">班级</view>
+              <view class="th">姓名</view>
+              <view class="th">状态</view>
+              <view class="th">详细信息</view>
+          </view>
+          <block wx:for="{{allStaySchool}}" wx:key="unique">
+            <view class="tr">
+              <view class="td">{{item.iclass}}</view>
+              <view class="td">{{item.username}}</view>
+              <view class="td">{{item.checkshool? '已打卡' : '未打卡'}}</view>
+              <navigator url="{{item.checkshool ? '../dz_23/dz_23?id='+item.id : '../dz_5/dz_5?id='+item.id}}" class="td">
+               <image mode='widthFix' class='check' src='../../sources/images/look.png'></image>
+               </navigator>
+            </view>
+          </block>  
+      </view>
+      <view class="page" wx:if="{{flag==true}}">
+        <button bindtap='previous'>上一页</button>
+          <text class="pagenum">{{page}}/{{pages}}</text>
+        <button bindtap='next'>下一页</button>
+      </view> 
+  </view>
+</view>
+<view wx:if="{{flag==false}}" style="text-align:center;font-weight:bold;margin-top:10px;">本周没有人留校</view>
