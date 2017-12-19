@@ -9,6 +9,7 @@ const height = width
 
 Page({
   data: {
+    a:1,
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
