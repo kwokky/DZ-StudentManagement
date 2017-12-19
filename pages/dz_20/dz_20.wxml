@@ -1,0 +1,26 @@
+<!--pages/dz_20/dz_20.wxml-->
+
+    <view class="container">
+      <view class='wrap-chunk'>
+    <view class='chunk-small' wx:for="{{dromPerson}}" wx:for-item="i" wx:key="unique">
+      <view class="chunk" wx:for="{{i}}" wx:for-item="j" wx:key="unique" >  
+          <view data-id="{{j.id}}" bindtap='navigator'>  
+            <image class="photo" src="{{j.photo ? j.photo : '../../sources/images/defaultphoto.jpg'}}"></image>
+
+              <view class="username" >{{j.bed}} {{j.username}} 
+                <label style="{{j.leave ? 'color:green' : j.back ? 'color:green' : 'color:red'}}">
+                  {{j.username=='无人' ? '' : j.leave ? '(请假)' : j.back ? '(回家)' : '(留校)'}}
+                </label>
+              </view>
+              <view class='hr'></view>   
+
+          </view>
+
+      </view>
+    </view>
+
+
+      </view>
+      <view class="door">门</view>
+    </view>
+

@@ -1,0 +1,23 @@
+<!--pages/dz_7/dz_7.wxml-->
+<view class="le-wrap">
+  <view class="le-row" style="">
+    <text style="text-align:center;font-size:60rpx;font-weight:bold;display:block" name="username">{{userinfo.class}} </text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">应到：{{userinfo.count}} </text>
+    <text class="le-title">实到：{{userinfo.count-userinfo.unreat}} </text>
+    <text class="le-title">缺勤：{{userinfo.unreat}} </text>
+  </view>
+
+<view style="width:80%; font-size:17px;font-weight:bold;">
+<text>未在校人名单：</text>
+<label style='width:100%;border-top:1px solid #ccc; display:block;margin:20rpx 0;'></label>
+</view>
+
+  <view style="width:80%;margin-bottom:10rpx;color:#101010;border-bottom:1px #ccc dotted;padding-bottom:20rpx;" wx:for="{{userlist}}" wx:key="unquire">
+    <text style="width:200rpx;float:left;">{{item.username}}</text><label>{{item.reason}}</label>
+  </view>
+  <view style="font-size:18px;" wx:if="{{flag == false}}">无</view>
+
+</view>
+

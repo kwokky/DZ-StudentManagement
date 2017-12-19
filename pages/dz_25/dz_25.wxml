@@ -1,0 +1,38 @@
+<!--pages/dz_7/dz_7.wxml-->
+<form bindsubmit="Submit">
+<view class="le-wrap">
+  <view class="le-row">
+    <text class="le-title" name="username">姓名： </text>
+    <input name="username" value='{{username}}' disabled="true" />
+   
+  </view>
+  <view class="le-row">
+    <text class="le-title">状态：</text>
+
+    <radio-group bindchange="statusChange" name="status"> 
+      <label wx:for="{{status}}" wx:key="unique"  class='le-val2'>
+        <radio value="{{item.value}}" checked='{{item.checked}}'  />{{item.name}}
+      </label>
+    </radio-group>
+
+
+  </view>
+
+  <view class="le-row" wx:if="{{show == 0}}">
+    <text class="le-title">离校时间：</text>
+    <picker mode="date" value="{{startdate}}" bindchange="startDateChange">
+    <input name="begintime" value='{{startdate}}' disabled="true" class="time"/>
+    </picker>
+    <text style='float:left;margin:0 10rpx; font-size:16px' >至</text>
+    <picker mode="date" value="{{enddate}}" bindchange="endDateChange">
+    <input name="endtime"  value='{{enddate}}' disabled="true" class="time" />
+    </picker>
+  </view>
+
+  <view class="le-row" wx:if="{{show == 0}}">
+    <text class="le-title">原因：</text>
+    <textarea name="reason" placeholder="未到校原因" placeholder-style="color:ccc;" bindinput='yuanyin' value='{{userinfo.reason}}' />
+  </view>
+  <button class='sub' formType="submit" data-id='{{userinfo.id}}'> 提交</button>
+</view>
+</form>

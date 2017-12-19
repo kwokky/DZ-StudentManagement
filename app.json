@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/dz_1/dz_1",
+    "pages/admin_menu/admin_menu",
+    "pages/dz_2/dz_2",
+    "pages/dz_17/dz_17",
+    "pages/student_grow/student_grow",
+    "pages/score_add/score_add",
+    
+    "pages/student_oper/student_oper",
+    "pages/dz_4/dz_4",
+   
+    
+    "pages/admin_chuqinlist/admin_chuqinlist",
+    "pages/admin_chuqininfo/admin_chuqininfo",
+    "pages/dz_24/dz_24",
+    "pages/dz_25/dz_25",
+    "pages/dz_18/dz_18",
+    "pages/dz_20/dz_20",
+    "pages/dz_10/dz_10",
+    "pages/dz_5/dz_5",
+    "pages/dz_3/dz_3",
+    "pages/dz_14/dz_14",
+    "pages/dz_15/dz_15",
+    "pages/dz_11/dz_11",
+    "pages/dz_12/dz_12",
+    "pages/dz_9/dz_9",
+    "pages/dz_8/dz_8",
+    "pages/dz_16/dz_16",
+    "pages/dz_23/dz_23",
+    "pages/admin_weekshool/admin_weekshool",
+    "pages/admin_leavelist/admin_leavelist",
+    "pages/admin_weekhome/admin_weekhome",
+    "pages/admin_historyRecord/admin_historyRecord",
+    "pages/admin_weekNumInfo/admin_weekNumInfo",
+    "pages/admin_classcheckhome/admin_classcheckhome",
+    "pages/admin_checkhome/admin_checkhome",
+    "pages/admin_classshool/admin_classshool",
+    "pages/admin_classbackhome/admin_classbackhome",
+    "pages/dz_6/dz_6",
+    
+    "pages/dz_19/dz_19",
+    "pages/dz_21/dz_21",
+    "pages/dz_7/dz_7",
+    "pages/dz_13/dz_13",
+    "pages/dz_22/dz_22"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "dz学生管理",
+    "navigationBarTextStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 15000,
+    "downloadFile": 15000
+  }
+}

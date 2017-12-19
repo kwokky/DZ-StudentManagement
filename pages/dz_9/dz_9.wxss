@@ -1,0 +1,100 @@
+/* pages/dz_9/dz_9.wxss */
+/*容器*/
+.container {
+  padding:0;
+  padding-top:10px;
+  width:100%;
+}
+.table {
+  border:1px solid #dadada;
+  border-right: 0;
+  border-bottom: 0;
+  width: 95%;
+}
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tr:nth-child(odd) {
+  background: #f3f3f3;
+}
+.tr:last-child {
+  border:none;
+  height: 0;
+}
+.tr:last-child .td {
+  border:none;
+}
+.th,.td {
+  padding: 7px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width:100%;
+  font-size: 33rpx;
+}
+.th {
+  font-weight: 600;
+  font-size: 35rpx;
+}
+/*分页*/
+.page {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+}
+.page,button {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left:40px;
+  padding-right:40px;
+}
+.search-wrap{
+  width:75%;
+  margin: 15px auto ;
+  height: 60rpx;
+  position: relative;
+}
+.search-inpulong{
+  border-bottom:1px solid #ccc;
+  height: 100%;
+  width:97%;
+  float: left;
+  font-size: 30rpx;
+  padding-left:3%;
+  transition:100ms ease-in-out;
+  position: absolute;
+}
+.search-inputshort{
+  border-bottom:1px solid #ccc;
+  height: 100%;
+  box-shadow: 0 0 3px 1px #000;
+  width:70%;
+  float: left;
+  font-size: 30rpx;
+  padding-left:3%;
+  transition:100ms ease-in-out;
+   position: absolute;
+
+}
+.search-button{
+  background: none;
+  border: none;
+  color: #000;
+  float: right;
+  border-radius: 0;
+  margin: 0;
+  width:27%;
+  height: 100%;
+  transition:100ms ease-in-out;
+  display: none;
+}
+button::after{
+  content: none;
+}
+.pagenum{
+  margin-top: 20px;
+  line-height: 2.55555556;
+}

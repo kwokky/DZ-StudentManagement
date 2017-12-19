@@ -1,0 +1,36 @@
+<!--pages/dz_7/dz_7.wxml-->
+<form bindsubmit="Submit">
+  <input type='hidden' value='{{id}}' name='sid' style='display:none'></input>
+<view class="le-wrap">
+  <view class="le-row">
+    <text class="le-title" name="username">姓名： </text>
+    <input value='{{userinfo[0].username ? userinfo[0].username : username}}' disabled="true" />
+   
+  </view>
+
+  <view class="le-row">
+    <text class="le-title">性质：</text>
+    <radio-group bindchange="xingzhiChange" name="status"> 
+      <label wx:for="{{xingzhi}}" wx:key="unique"  class='le-val2'>
+        <radio value="{{item.value}}" checked='{{userinfo[0].status == item.value ? userinfo[0].status == item.value : item.checked}}'  />{{item.name}}
+      </label>
+    </radio-group>
+  </view>
+
+  <view class="le-row" wx:if="{{show==1}}">
+    <text class="le-title">是否荣誉：</text>
+    <radio-group name="honor"> 
+      <label wx:for="{{honor}}" wx:key="unique"  class='le-val2'>
+        <radio value="{{item.value}}" checked='{{userinfo[0].honor == item.value ? userinfo[0].honor == item.value : item.checked}}'  />{{item.name}}
+      </label>
+    </radio-group>
+  </view>
+
+
+  <view class="le-row">
+    <text class="le-title">具体内容：</text>
+    <textarea name="content" placeholder="内容..." placeholder-style="color:ccc;" bindinput='' value='{{userinfo[0].content}}' />
+  </view>
+  <button class='sub' formType="submit" data-id='{{userinfo.id}}'> 提交</button>
+</view>
+</form>

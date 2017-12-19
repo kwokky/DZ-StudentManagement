@@ -1,0 +1,35 @@
+<!--pages/admin_classbackhome/admin_classbackhome.wxml-->
+<view class="search-wrap" bindtap='searchBtnstatus1' wx:if="{{flag==true}}">
+  <form bindsubmit="search">
+    <button hidden='{{search}}' form-type='submit' size='mini' class='search-button' formType="submit">搜索</button>
+    <input placeholder='输入学生姓名' class="{{search ? 'search-inpulong' : 'search-inputshort'}}" confirm-type="search" bindconfirm="search" bindinput="bindinput"></input>
+    </form>
+</view>
+<view  bindtap='searchBtnstatus2'>
+  <view class="container"  wx:if="{{flag == true}}">
+    <view class="table">
+        <view class="tr">
+            <view class="th">姓名</view>
+            <view class="th">性别</view>
+            <view class="th">回家方式</view>
+            <view class="th">查看</view>
+        </view>
+        <block wx:for="{{classhome_list}}" wx:key="unique">
+          <view class="tr" bindtap="showInfo" data-id='{{item.id}}'>
+            <view class="td">{{item.name}}</view>
+            <view class="td">{{item.sex}}</view>
+            <view class="td">{{item.way}}</view>
+            <view class="td">
+            <image mode='widthFix' class='check' src='../../sources/images/look.png'></image>
+            </view>
+          </view>
+        </block>  
+    </view>
+     <view class="page">
+      <button data-id='0' bindtap='page'>上一页</button>
+       <text class="pagenum">{{(page+1)}}/{{pages}}</text>
+      <button data-id='1' bindtap='page'>下一页</button>
+    </view> 
+</view>
+
+</view>

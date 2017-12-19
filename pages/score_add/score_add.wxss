@@ -1,0 +1,32 @@
+/* pages/score_add/score_add.wxss */
+/*信息 外  */
+.teacher-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top:30rpx;
+  box-sizing: border-box;
+}   
+/*内容标题  */
+.te-title {
+  padding-top:10rpx; 
+}
+/*文本框   */
+.te-val {
+  border:1px solid #8c8c8c;
+  border-radius:4px;
+  padding:5rpx 15rpx;
+  color:#343434;
+  margin-left: 30rpx; 
+  width:247rpx;
+}
+/*行  */
+.te-row {
+  flex-direction:row;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:40rpx;
+position:relative;
+}

@@ -1,0 +1,32 @@
+/* pages/dz_18/dz_18.wxss */
+.container {
+  padding:0;
+  padding-top:30rpx;
+}
+
+ navigator {
+  border: 1px solid #ccc;
+  border-bottom:none;
+  width:100%;
+  height:120rpx;
+  float: left;
+  line-height: 120rpx;
+  vertical-align: center;
+  box-shadow: 0 1px 10px #ccc;
+  font-size: 35rpx;
+}
+ navigator:last-of-type {
+  border-bottom: 1px solid #ccc;
+
+}
+.img1{
+  width:60rpx;
+  margin:auto 15rpx auto 30rpx;
+  vertical-align: middle;
+}
+.img2{
+  width:15rpx;
+  float: right;
+  margin-top: 50rpx;
+  margin-right: 40rpx;
+}

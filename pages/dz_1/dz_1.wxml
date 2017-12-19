@@ -1,0 +1,16 @@
+<!--dz_1.wxml-->
+<view class="container">
+  <view class="wel-info">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="wel-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="wel-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="wel-bottom">
+    <text class="wel-font">大智周末学生跟踪平台</text>
+  </view>
+  <view class="wel-login">
+    <text bindtap='comein'>点击进入</text>
+  </view>
+</view>

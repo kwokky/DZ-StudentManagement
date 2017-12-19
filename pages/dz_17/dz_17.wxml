@@ -1,0 +1,32 @@
+<!--pages/dz_17/dz_17.wxml-->
+<view class="container" wx:if="{{backflag == 1}}">
+  <view class='location' wx:if="{{flag == '确认到家'  || flag == '确认到家（非正常）'}}" bindtap='cd'>
+    <text>当前位置：</text>
+    <text>{{nowPlace}}</text>
+ </view>
+  <view class='location' wx:if="{{flag == '确认到家'  || flag == '确认到家（非正常）'}}">
+    <text>家庭位置：</text>
+    <text>{{homePlace}}</text>
+ </view> 
+ <view class='location' wx:if="{{flag == '已确认'}}">
+    <text>确定位置：</text>
+    <text>{{homePlace}}</text>
+ </view>
+
+ <view class='wraning' wx:if="{{flag == '确认到家（非正常）'}}" ><text style='color:red;'>注：</text>非正常确认到家只有在获取不到家庭位置或者家庭距离太远的时候才会启用，打卡后需要老师在老师端确认。</view>
+
+<button 
+  class='sub' 
+  bindtap='ishome' 
+  data-type="{{flag == '确认到家' ? 'yes' : 'no'}}" 
+  disabled="{{btnstatus ? flag=='已确认' ? true : false : true}}" 
+  wx:if="{{backflag == 1}}" 
+  style="{{flag == '确认到家（非正常）' ? 'margin-top:40rpx;' : ''}}"
+>{{btnstatus ? flag : '当前不可用'}}</button>
+
+</view>
+
+
+<view wx:if="{{backflag == 0}}" style="margin:0 auto;font-weight:bold;text-align:center;margin-top:10px;">本周你没有申请回家</view>
+
+

@@ -1,0 +1,32 @@
+<!--pages/admin_classshool/admin_classshool.wxml-->
+
+<view class="search-wrap" bindtap='searchBtnstatus1' wx:if="{{flag==true}}">
+  <form bindsubmit="search">
+    <button hidden='{{search}}' form-type='submit' size='mini' class='search-button' formType="submit">搜索</button>
+    <input placeholder='输入学生姓名/班级' class="{{search ? 'search-inpulong' : 'search-inputshort'}}" confirm-type="search" bindconfirm="search" bindinput="bindinput"></input>
+    </form>
+</view>
+
+<view wx:if='{{flag == true}}'>
+  <view class="container">
+   <block wx:for="{{checkhome}}" wx:key="unique">
+    <view class="{{item.checkhome ? 'table' : 'table1'}}">
+        <view class="tr">
+            <view  class="{{item.checkhome ? 'td' : 'td1'}}">{{item.username}}</view>
+            <view class="{{item.checkhome ? 'td' : 'td1'}}">{{item.tripmode}}</view>
+            <view class="{{item.checkhome ? 'td' : 'td1'}}">{{item.contime}}</view>
+        </view>
+          <view class="tr">
+            <view class="{{item.checkhome ? 'td' : 'td1'}}">确认地点：{{item.adress}}</view>
+          </view>
+    </view>
+  </block> 
+
+     <view class="page">
+      <button data-id='0' bindtap='page'>上一页</button>
+       <text class="pagenum">{{(page+1)}}/{{pages}}</text>
+      <button data-id='1' bindtap='page'>下一页</button>
+    </view> 
+</view>
+
+</view>

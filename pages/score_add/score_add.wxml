@@ -1,0 +1,26 @@
+<!--pages/score_add/score_add.wxml-->
+<form bindsubmit='formSubmit' bindreset='formReset'>
+  <view class="teacher-info">
+    <view class="te-row">
+      <text class="te-title">科目名称:</text>
+      <input focus='{{focus}}' type="text" class='te-val' value='{{scoreInfo.sname}}' name="sname" confirm-type="done"/>
+    </view>
+    <view class="te-row">
+      <text class="te-title">考试分数:</text>
+      <input focus='{{focus}}' type="text" class='te-val' value='{{scoreInfo.score}}' confirm-type="done" name="score" />
+    </view>
+    <view class="te-row">
+      <text class="te-title">考试次数:</text>
+      <input focus='{{focus}}' type="text" class='te-val' value='{{scoreInfo.num}}' name="num" confirm-type="done"/>
+    </view>
+    <view class="te-row">
+      <text class="te-title">考试日期:</text>
+      <picker mode="date" value="{{time}}" bindchange="bindDateChange" name="pubtime">
+        <view class="te-val" style='height:22px;'>{{time ? time :'请选择' }}</view>
+      </picker>
+    </view>
+
+    <button form-type='submit' style="background:#1AAD19;color:#FFF;height:90rpx;line-heighta:90rpx; width:65%;margin-top:20px;">{{addUpdate==1 ? '提交' : '修改'}}</button>
+</view>
+</form>
+

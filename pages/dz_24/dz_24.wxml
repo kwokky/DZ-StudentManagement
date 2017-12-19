@@ -1,0 +1,18 @@
+<!--pages/dz_10/dz_10.wxml-->
+<view wx:for="{{staySchoolList}}" wx:key="unique">
+    <view style="overflow: hidden; height: auto;width:92%;margin:20rpx auto 0;"  >
+      <view class="che-wrap ">
+      <label>{{item.class}}</label>
+      <label >应到 {{item.count}} 人</label>
+      <label>实到 {{item.count-item.unreat}} 人</label>
+      </view>
+    </view>
+    
+    <view class="container" >
+      <view class="student-wrap" >
+        <block wx:for="{{staySchoolList[index]['content']}}" wx:key="unique" >
+          <navigator url='../dz_25/dz_25?id={{item.id}}&reat={{item.reat}}&username={{item.username}}' class="{{item.reat ? 'b' : 'a'}}">{{item.username}}</navigator> 
+        </block>
+      </view>
+    </view>
+</view>

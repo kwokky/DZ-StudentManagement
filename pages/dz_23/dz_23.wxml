@@ -1,0 +1,8 @@
+<!--pages/dz_23/dz_23.wxml-->
+<view class='container' style="font-size:34rpx;">
+    {{subflag ? '打卡地点：' : '当前地点：'}}{{nowadress}}
+    <button plain="true" bindtap='checkPhoto' style="margin-top:20px;" wx:if="{{!subflag}}">点击拍照上传</button>
+    <image src="{{photo ? photo :'../../sources/images/deff.png'}}" mode='widthFix' style="width:500rpx;margin-top:20px;"  bindtap='checkPhoto'></image>
+     <button bindtap='sub' disabled='{{subflag}}' class="{{subflag ? 'disabled' : 'enabled' }}">{{subflag ? '今天已打卡' : '尚未打卡 立即打卡'}}</button>
+</view>
+   

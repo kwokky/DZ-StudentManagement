@@ -1,0 +1,29 @@
+<!--pages/dz_7/dz_7.wxml-->
+<view class="le-wrap">
+  <view class="le-row">
+    <text class="le-title">姓名:</text>
+    <text class='le-val '>{{checkhomeinfo.username}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">到家时间:</text>
+    <text class='le-val'>{{checkhomeinfo.contime}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">是否确认:</text>
+    <text class='le-val'>{{checkhomeinfo.contime ? '是' : '否'}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">确认地点:</text>
+    <text class='le-val'>{{checkhomeinfo.conadress}}</text>
+  </view>
+  <view class="le-row">
+    <text class="le-title">家庭地址:</text>
+    <text class='le-val'>{{checkhomeinfo.adress}}</text>
+  </view>
+  <view class="le-row" wx:if="{{checkhomeinfo.is_normal != null}}">
+    <text class="le-title">确认类型:</text>
+    <text class='le-val' >{{checkhomeinfo.is_normal == 1 ? '正常打卡' : checkhomeinfo.teacherCheck == 1 ? '非正常打卡（老师已确认）' : '非正常打卡（老师未确认）'}}</text>
+  </view>
+</view>
+
+  <button class='teachercheck' wx:if="{{checkhomeinfo.teacherCheck == 0}}" bindtap='teachercheck'>确认学生到家</button>

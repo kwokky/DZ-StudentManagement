@@ -1,0 +1,35 @@
+<!--pages/admin_weekshool/admin_weekshool.wxml-->
+<view class="search-wrap" bindtap='searchBtnstatus1' wx:if="{{flag==true}}">
+  <form bindsubmit="search">
+    <button hidden='{{search}}' form-type='submit' size='mini' class='search-button' formType="submit">搜索</button>
+    <input placeholder='输入班级' class="{{search ? 'search-inpulong' : 'search-inputshort'}}" confirm-type="search" bindconfirm="search" bindinput="bindinput"></input>
+    </form>
+</view>
+
+<view bindtap='searchBtnstatus2' wx:if="{{flag==true}}">
+  <view class="container">
+    <view class="table">
+        <view class="tr">
+            <view class="th">编号</view>
+            <view class="th">班级</view>
+            <view class="th">人数</view>
+            <view class="th">操作</view>
+        </view>
+        <block wx:for="{{weekshool_list}}" wx:key="unique">
+          <view class="tr" bindtap='showInfo' data-week='{{week}}' data-class='{{item.class}}'>
+            <view class="td">{{item.id}}</view>
+            <view class="td">{{item.class}}</view>
+            <view class="td">{{item.num}}</view>
+            <view class="td">
+              <image mode='widthFix' class='check' src='../../sources/images/look.png'></image>
+            </view>
+          </view>
+        </block>  
+    </view>
+     <view class="page">
+      <button data-id='0' bindtap='page'>上一页</button>
+       <text class="pagenum">{{(page+1)}}/{{pages}}</text>
+      <button data-id='1' bindtap='page'>下一页</button>
+    </view> 
+</view>
+</view>

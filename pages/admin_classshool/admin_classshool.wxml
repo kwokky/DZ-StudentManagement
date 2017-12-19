@@ -1,0 +1,26 @@
+<!--pages/admin_classshool/admin_classshool.wxml-->
+<view>
+  <view class="container">
+    <view class="table">
+        <view class="tr">
+            <view class="th">姓名</view>
+            <view class="th">性别</view>
+            <view class="th">宿舍</view>
+            <view class="th">查看</view>
+        </view>
+        <block wx:for="{{classhome_list}}" wx:key="unique">
+          <view class="tr">
+            <view class="td">{{item.name}}</view>
+            <view class="td">{{item.sex}}</view>
+            <view class="td">{{item.dorm}}</view>
+            <navigator url='../dz_5/dz_5' class="td check">查看</navigator>
+          </view>
+        </block>  
+    </view>
+     <view class="page">
+      <button>上一页</button>
+      <button>下一页</button>
+    </view> 
+</view>
+
+</view>

@@ -1,0 +1,87 @@
+/* pages/dz_6/dz_6.wxss */
+.container{
+  padding:0;
+}
+/*请假记录 外  */
+.leave-list-wrap {
+  height: 100%;
+  margin:30rpx 10rpx 0;
+  border-top: 1px solid #dadada;
+  border-left: 1px solid #dadada;
+}
+/*请假记录 行 */
+.leave-list-tr {
+  flex-direction:row;
+  display: flex;
+}
+.leave-list-tr:nth-child(odd) {
+  background: #f3f3f3;
+}
+.leave-list-tr:last-child {
+  display: none;
+}
+/*请假记录 列  */
+.leave-list-row {
+  width: 33%;
+  line-height:35px;
+  text-align:center;
+  border-right: 1px solid #dadada;
+  border-bottom:1px solid #dadada;
+  font-size:30rpx;
+}
+
+.second-width {
+  width:43%;
+}
+.three-width {
+  width:23%;
+}
+/*请假记录 表头 列 加粗  */
+.th {
+  font-weight:bold;
+  font-size:35rpx;
+}
+/*请假记录 查看  */
+.check {
+  color:blue;
+ 
+}
+/*请假记录 分页 */
+.list-page {
+  flex-direction:row;
+  display: flex;
+  justify-content:space-between;
+  padding:60rpx 140rpx 0; 
+}
+/*分页按钮  */
+.button-page {
+  width: 40%;
+  border:1px solid #000;
+  text-align:center;
+  line-height:30px;
+}
+.yichuli{
+  color:green;
+}
+.weichuli{
+  color:red;
+}
+
+/*分页*/
+.page {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  
+}
+.page,button {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left:40px;
+  padding-right:40px;
+}
+.pagenum{
+  margin-top: 20px;
+  line-height: 2.55555556;
+}

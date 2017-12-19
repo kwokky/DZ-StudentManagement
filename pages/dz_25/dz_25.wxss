@@ -1,0 +1,87 @@
+/* pages/dz_7/dz_7.wxss */
+/*请假详情 外  */
+.le-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top:100rpx;
+  box-sizing: border-box;
+  font-size: 16px;
+} 
+/*请假详情 行  */
+.le-row {
+  flex-direction:row;
+  justify-content: space-between;
+  margin-bottom:50rpx;
+  width:80%;
+
+}
+/*请假详情 标题  */
+.le-title {
+  font-size: 16px;
+  float: left;
+line-height: 50rpx;
+
+}
+/*文本框   */
+.le-val {
+  border-radius:4px;
+  padding:5rpx 10rpx;
+  color:#343434;
+  margin-left: 20rpx; 
+  font-size: 16px;
+  width:260rpx;
+}
+picker{
+  width:180rpx;
+  font-size: 17px;
+  float: left;
+}
+.time{
+  text-align: center;
+}
+textarea{
+  float: left;
+  width:450rpx;
+  height: 200rpx;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  padding:15rpx;
+  border-radius: 10rpx;
+}
+.le-val2{
+  font-size: 16px;
+  margin-right: 10rpx;
+}
+radio-group{
+  display: inline;
+}
+/*长文本框   */
+.le-long-width {
+  width:330rpx;
+  font-size: 16px;
+}
+/*请假记录 分页 */
+.le-page {
+  flex-direction:row;
+  display: flex;
+  justify-content:space-between;
+  padding:30rpx 140rpx 0; 
+}
+/*分页按钮  */
+.button-page {
+  width: 40%;
+  border:1px dashed #000;
+  text-align:center;
+  line-height:30px;
+}
+/*提交按钮*/
+.sub{
+  width:80%;
+  color: #fff;
+  background: #393939;
+  border:none;
+  margin-top:30rpx;
+}

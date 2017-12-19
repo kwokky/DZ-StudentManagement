@@ -1,0 +1,39 @@
+/* pages/historyRecord/historyRecord.wxss */
+
+/*标题  */
+.historyTitle{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  line-height: 180rpx;
+  font-size: 55rpx;
+  background-color: #26a6c9; 
+  color: #fff;
+}
+/*外  */
+.blockWrap{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-left: 55rpx;
+}
+/*块  */
+.blockWrap view{
+  width: 15%;
+  line-height: 115rpx;
+  float: left;
+  text-align: center;
+  margin: 55rpx 55rpx 0 0 ;
+  border: 2px solid #d9d9d9;
+  font-weight: bold;
+  color: #797979;
+  transition: .1s ease;
+}
+.blockWrap view:active{
+  background-color:#369e87;
+  color: #fff;
+  border: 2px solid #336959;
+  box-shadow:0 0 25rpx 5rpx #367f6c inset;
+}
+
+

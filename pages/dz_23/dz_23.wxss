@@ -1,0 +1,11 @@
+/* pages/dz_23/dz_23.wxss */
+.disabled{
+  width:80%;
+margin:30px 0;
+}
+.enabled{
+width:80%;
+background:#43BB40;
+color:#fff;
+margin:30px 0;
+}

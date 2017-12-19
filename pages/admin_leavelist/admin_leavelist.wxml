@@ -1,0 +1,43 @@
+<!--pages/admin_weekhome/admin_weekhome.wxml-->
+<view>
+  <view class="container" wx:if="{{flag == 1}}">
+    <!-- <view class="table">
+        <view class="tr">
+            <view class="th">姓名</view>
+            <view class="th">开始时间</view>
+            <view class="th">结束时间</view>
+            <view class="th">操作</view>
+        </view> 
+       <block wx:for="{{leave_list}}" wx:key="unique">
+          <view class="tr" bindtap="showInfo" data-id='{{item.id}}'>
+            <view class="td">{{item.username}}</view>
+            <view class="td">{{item.begintime}}</view>
+            <view class="td">{{item.endtime}}</view>
+            <view class="td check">查看</view>
+          </view>
+        </block>  
+    </view> -->
+    <view class="table">
+     <block wx:for="{{leave_list}}" wx:key="unique">
+        <view class='row' bindtap="showInfo" data-id='{{item.id}}'>
+          <view class="name">{{item.username}}</view>
+          <view class="time">
+            <view><text>开始:</text>{{item.begintime}}</view>
+            <view><text>结束:</text>{{item.endtime}}</view>
+          </view>
+          <view class="more">
+            <image src='../../sources/images/youjian.png' style='width:20rpx;margin-right:30rpx;' mode="widthFix"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+     <view class="page">
+      <button bindtap='previous'>上一页</button>
+      <text class="pagenum">{{page}}/{{pages}}</text>
+      <button bindtap='next'>下一页</button>
+    </view> 
+</view>
+</view>
+
+<view wx:if="{{flag == 0}}" style="text-align:center;font-weight:bold;margin-top:10px;">本周没有请假学生</view>
+

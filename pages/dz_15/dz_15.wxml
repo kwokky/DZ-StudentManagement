@@ -1,0 +1,24 @@
+<!--pages/dz_15/dz_15.wxml-->
+<view class="container">
+    <view class="qingjia-view">
+        <text>请假开始时间：</text>
+         <picker mode="date" value="{{startdate}}" bindchange="startDateChange">
+           <input class="date-input" value='{{startdate}}' disabled="true" />
+        </picker> 
+        <image class='riliimg' src='../../sources/images/rili.png'/>
+    </view>
+    <view class="qingjia-view">
+        <text>请假结束时间：</text>
+         <picker mode="date" value="{{enddate}}" bindchange="endDateChange">
+           <input class="date-input" value='{{enddate}}'disabled="true" />
+        </picker> 
+        <image class='riliimg' src='../../sources/images/rili.png'/>
+    </view>
+    <view class="qingjia-view">
+        <text style='width:200rpx;'>原因：</text>
+        <textarea placeholder="请假原因" placeholder-style="color:ccc;" class="textarea-input" bindinput='yuanyin'  />
+    </view>
+    <button class='sub' bindtap='sub' disabled='{{flag}}'>提交审批</button>
+    
+    <button class='sub' plain="true" bindtap='nav' >我的请假记录</button>
+</view>

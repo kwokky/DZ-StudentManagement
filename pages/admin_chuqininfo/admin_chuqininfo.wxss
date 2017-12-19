@@ -1,0 +1,29 @@
+/* pages/dz_7/dz_7.wxss */
+/*请假详情 外  */
+.le-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top:50rpx;
+  box-sizing: border-box;
+  font-size: 17px;
+} 
+.le-title{
+  margin-left: 20rpx;
+}
+/*请假详情 行  */
+.le-row {
+  flex-direction:row;
+  justify-content: space-between;
+  margin-bottom:40rpx;
+  width:80%;
+}
+
+
+/*长文本框   */
+.le-long-width {
+  width:330rpx;
+}
+

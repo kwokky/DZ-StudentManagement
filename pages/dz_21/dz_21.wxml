@@ -1,0 +1,4 @@
+<!--pages/dz_21/dz_21.wxml-->
+<view class='container'>
+  <button wx:for="{{role}}" wx:key="unique" bindtap="adduser" data-val='{{item.en}}'>{{item.role}}</button>
+</view>

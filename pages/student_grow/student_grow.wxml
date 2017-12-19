@@ -1,0 +1,100 @@
+<!--pages/student_grow/student_grow.wxml-->
+<view class="page" bindtap='hideFloat'>  
+  
+  <!--顶部导航栏-->  
+  <view class="swiper-tab">  
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">成绩</view>  
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">好人好事</view>  
+    <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">荣誉</view>  
+  </view>  
+  
+  <!--内容主体-->  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange"  style="height:{{winHeight}}px">  
+    <swiper-item>  
+      
+      
+
+
+
+    <view class='Btnwrap'>
+        <text>{{username}}</text>
+        <navigator class='addBtn' bindtap='search' url=''>搜索</navigator>
+        <navigator class='addBtn' bindtap='addScore' url=''>添加一条</navigator>
+        <input type='text' placeholder='搜索科目名称' confirm-type='search' focus='{{input_focus0}}' class='search_text' bindconfirm='search_name' bindblur='blurInputHidden' hidden='{{search_status0}}' />
+      </view>
+      <view class='tbody' wx:if="{{List0.length}}">
+        <view class='tb_title'>
+          <view>科目</view>
+          <view>分数</view>
+          <view>次数</view>
+          <view>时间</view>
+        </view>
+        <block wx:for="{{List0}}" wx:key="unquie" >
+          <view class="td_border" bindlongpress="Oper" data-id="{{item.id}}">
+            <view>{{item.sname}}</view>
+            <view>{{item.score}}</view>
+            <view>{{item.num}}</view>
+            <view>{{item.pubtime}}</view>
+          </view>  
+        </block> 
+        <view class="pages" >
+          <button bindtap='previous'>上一页</button>
+          <text class="pagenum">{{page}}/{{pages}}</text>
+          <button bindtap='next'>下一页</button>
+        </view>
+      </view>
+
+
+
+
+
+
+    </swiper-item>  
+    <swiper-item >  
+
+      <view class='Btnwrap'>
+        <text>{{username}}</text>
+        <navigator class='addBtn' bindtap='search' url=''>搜索</navigator>
+        <navigator class='addBtn' url="../student_oper/student_oper?username={{username}}&userid={{uid}}" hover-class='none'>添加一条</navigator>
+        <input type='text' placeholder='搜索关键词' confirm-type='search' focus='{{input_focus1}}' class='search_text' bindconfirm='search_name' bindblur='blurInputHidden' hidden='{{search_status1}}' />
+      </view>
+      <view class='matter-view' wx:for="{{List1}}" wx:key="unquie"  bindlongpress='Oper'  data-id="{{item.id}}" data-key="{{index}}">
+
+          <label style=" float:left;margin-left: 25rpx;{{item.status == 1 ? 'color:green' : 'color:red'}}">{{item.status == 1 ? '(表扬) ' : '(犯错) '}}</label>
+
+          <text>{{item.content}}</text>
+          <text>{{item.pubtime}}</text>
+      </view>
+
+
+    </swiper-item>  
+    <swiper-item> 
+
+       <view class='Btnwrap'>
+        <text>{{username}}</text>
+        <navigator class='addBtn' bindtap='search' url=''>搜索</navigator>
+        <navigator class='addBtn' url='../student_oper/student_oper?username={{username}}&userid={{uid}}' hover-class='none'>添加一条</navigator>
+        <input type='text' placeholder='搜索关键词' confirm-type='search' focus='{{input_focus2}}' class='search_text' bindconfirm='search_name' bindblur='blurInputHidden' hidden='{{search_status2}}' />
+      </view>
+      <view  bindlongpress='Oper' class='honor-view' wx:for="{{List2}}" wx:key="unquie" data-id="{{item.id}}" data-key="{{index}}">
+          <text>{{item.content}}</text>
+      </view>
+
+ 
+    </swiper-item>  
+
+    <!--浮动的小框 start -->
+    <view class='float-chunk' wx:if="{{showfloatChunk}}" style='left:{{floatChunkLeft}}px;top:{{floatChunkTop}}px;'>
+        <view>
+          <text bindtap='caozuo' data-type='update'>修改</text>
+          <text bindtap='caozuo' data-type='delete'>删除</text>
+        </view>
+        <view class='float-san'></view>
+      </view>
+      <!--浮动的小框 end -->
+
+  </swiper>  
+
+      
+</view>  
+ 
