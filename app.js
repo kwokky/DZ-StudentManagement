@@ -35,8 +35,8 @@ App({
   },
   globalData: {
     userInfo: null,   //用户信息
-    openId:'',   //用户openid
-    role:'', //用户角色
+    openId:'ooc0D0RLdxWCTqkEDus326y_bXAI',   //用户openid
+    role:'student', //用户角色
     roleurl:'',   //用户跳转角色页面(老师&学生)
     teaphonse:'',   //忘了
     userstatus:false,  //忘了

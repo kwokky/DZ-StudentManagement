@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/dz_1/dz_1",
-    "pages/admin_menu/admin_menu",
-    "pages/dz_2/dz_2",
     "pages/dz_17/dz_17",
+    "pages/dz_1/dz_1",
+    "pages/dz_2/dz_2",
+    
+    "pages/admin_menu/admin_menu",
+    
+    
     "pages/student_grow/student_grow",
     "pages/score_add/score_add",
     
