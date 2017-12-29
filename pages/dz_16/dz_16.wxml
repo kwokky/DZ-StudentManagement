@@ -15,7 +15,8 @@
     </view> 
 
      <view class='warning-text'>
-      <text>只能在周三或周四提交/撤销，路上请注意安全 :)</text>
+      <text wx:if="{{role == 'teacher'}}">老师啥时候改都行，尽情改。</text>
+      <text wx:else>只能在周三或周四提交/撤销，路上请注意安全 :)</text>
     </view> 
       
 

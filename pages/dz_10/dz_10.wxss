@@ -1,7 +1,7 @@
 /* pages/dz_10/dz_10.wxss */
 .container {
   padding:0;
-  padding-top:10px;
+  padding-top:0;
 }
 
 /*学生信息*/
@@ -10,16 +10,6 @@
   width:94%;
   padding-top: 3%;
 
-}
-.student-wrap navigator {
-  border-radius: 4%;
-  width:28%;
-  height:33px;
-  float: left;
-  line-height: 33px;
-  text-align: center;
-  margin-left: 4%;
-  margin-bottom: 5%;
 }
 .che-wrap{
   justify-content: center;
@@ -47,10 +37,26 @@
   margin:8rpx;
 }
 .a{
+  border-radius: 4%;
+  width:28%;
+  height:33px;
+  float: left;
+  line-height: 33px;
+  text-align: center;
+  margin-left: 4%;
+  margin-bottom: 5%;
   border:1px solid green;
   color: green;
 }
 .b{
+  border-radius: 4%;
+  width:28%;
+  height:33px;
+  float: left;
+  line-height: 33px;
+  text-align: center;
+  margin-left: 4%;
+  margin-bottom: 5%;
  border:1px solid red;
  color: red;
 }

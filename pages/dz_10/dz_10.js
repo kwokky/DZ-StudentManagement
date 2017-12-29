@@ -16,6 +16,11 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    if(options.find == 'all') {
+      this.setData({
+        find:'all',
+      })
+    }
     wx.showLoading({
       title: '获取中...',
       mask:true,
@@ -58,12 +63,12 @@ Page({
             num['check']++;
           }
         }
-        console.log(num);
         _this.setData({
           staySchoolList:sex,
           checknum:num,
           flag:true,
-        })
+        });
+        console.log(_this.data.staySchoolList);
       },
       fail:function(err){
         wx.hideLoading();
@@ -85,6 +90,36 @@ Page({
     })
   },
 
+  bindTouchStart: function (e) {
+    this.startTime = e.timeStamp;
+  },
+
+  bindTouchEnd: function (e) {
+    this.endTime = e.timeStamp;
+  },
+
+  /*长按学生姓名*/
+  changeLongSchoolStatus:function(e) {
+    if(this.data.find == 'all') {
+      return;
+    }
+    console.log(e);
+    wx.navigateTo({
+      url: '../dz_16/dz_16?id=' + e.currentTarget.dataset.id,
+    });
+  },
+
+  /*点击学生姓名*/
+  changeSchoolStatus: function (e) {
+    console.log(e);
+    if (this.endTime - this.startTime < 350) {
+      wx.navigateTo({
+        url: e.currentTarget.dataset.url,
+      });
+    }
+   
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -96,7 +131,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+   // this.onLoad('3434');
   },
 
   /**

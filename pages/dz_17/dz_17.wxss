@@ -14,7 +14,6 @@
   background: #393939;
   color: #fff;
   width:90%;
-  margin-top: 100rpx;
 }
 
 .wraning {

@@ -14,7 +14,7 @@ Page({
     var classe = e.currentTarget.dataset.class;
     var week = e.currentTarget.dataset.week;
     wx.navigateTo({
-      url: '../dz_10/dz_10?class=' + classe + '&week=' + week,
+      url: `../dz_10/dz_10?class=${classe}&week=${week}&find=all`,
     })
   },
   
@@ -87,13 +87,16 @@ Page({
     return height;
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      week: options.week
-    });
+    //获取日期是本年的第几天
+    var weekofyear = (((new Date()) - (new Date("2017-01-01"))) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
+      this.setData({
+        week: options.week ? options.week : weekofyear,
+      });
     this.page0();
    
   },
@@ -252,7 +255,7 @@ Page({
     wx.showLoading({
       title: '搜索中...',
       mask: true,
-    })
+    });
     wx.request({
       url: 'https://www.yanyufanchen.com/api/wxapi/weekLeaveCount',
       data: {

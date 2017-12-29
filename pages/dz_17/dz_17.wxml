@@ -14,6 +14,7 @@
  </view>
 
  <view class='wraning' wx:if="{{flag == '确认到家（非正常）'}}" ><text style='color:red;'>注：</text>非正常确认到家只有在获取不到家庭位置或者家庭距离太远的时候才会启用，打卡后需要老师在老师端确认。</view>
+  <view class='wraning' wx:if="{{homePlace == '按钮不可用'}}" ><text style='color:red;'>注：</text>如按钮为不可用状态，则当前时间不可确认到家。</view>
 
 <button 
   class='sub' 
@@ -21,7 +22,7 @@
   data-type="{{flag == '确认到家' ? 'yes' : 'no'}}" 
   disabled="{{btnstatus ? flag=='已确认' ? true : false : true}}" 
   wx:if="{{backflag == 1}}" 
-  style="{{flag == '确认到家（非正常）' ? 'margin-top:40rpx;' : ''}}"
+  style="{{flag == '确认到家（非正常）' ? 'margin-top:40rpx;' : 'margin-top:60rpx;'}}"
 >{{btnstatus ? flag : '当前不可用'}}</button>
 
 </view>

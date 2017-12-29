@@ -194,7 +194,7 @@ Page({
       data: {
         classes:_this.data.class,
         content: searchtxt,
-
+        week:_this.data.week,
       },
       success: function (res) {
         wx.hideLoading();

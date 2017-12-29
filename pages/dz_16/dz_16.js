@@ -8,25 +8,39 @@ Page({
     typearray: ['公交', '自行离校','客车'],
     timearray: ['周五', '周六'],
     typeindex: 0,
-    timeindex:0,
+    timeindex:0, 
     subbtn:true,
     revbtn:true,
+    uid:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if(options.id) {
+      this.setData({
+        uid:options.id,
+        role:'teacher',
+      });
+      var datas = {
+        id: this.data.uid,
+        role:'teacher',
+      }
+    } else {
+      var datas = {
+        openid: getApp().globalData.openId,
+        role:'student',
+      }
+    }
     wx.showLoading({
       title: '获取中...',
       mask: true,
-    })
+    });
     var _this = this;
     wx.request({      //按钮是否启用接口
       url: 'https://www.yanyufanchen.com/api/wxapi/backHomeBtn',
-      data:{
-        openid:getApp().globalData.openId,
-      },
+      data:datas,
       success:function(res){
         wx.hideLoading();
         console.log(res.data);
@@ -125,15 +139,24 @@ Page({
     wx.showLoading({
       title: '',
       mask:true,
-    })
-    /*调用接口开始*/
-    wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/backhome',
-      data: {
+    });
+    if(this.data.uid) {
+      var datas = {
+        id: this.data.uid,
+        method: _this.data.typearray[_this.data.typeindex],
+        time: _this.data.timearray[_this.data.timeindex],
+      }
+    } else {
+      var datas = {
         openid: getApp().globalData.openId,
         method: _this.data.typearray[_this.data.typeindex],
         time: _this.data.timearray[_this.data.timeindex],
-      },
+      }
+    }
+    /*调用接口开始*/
+    wx.request({
+      url: 'https://www.yanyufanchen.com/api/wxapi/backhome',
+      data: datas,
       success: function (res) {
         switch (res.data) {
           case 'succ':
@@ -170,14 +193,21 @@ Page({
   /*撤销申请*/
   backout:function(){
     var _this = this;
+    if(this.data.uid) {
+      var datas = {
+        id: this.data.uid,
+      }
+    } else {
+      var datas = {
+        openid: getApp().globalData.openId,
+      }
+    }
     wx.showLoading({
       title: '',
-    })
+    });
     wx.request({
       url: 'https://www.yanyufanchen.com/api/wxapi/backhomeout',
-      data: {
-        openid: getApp().globalData.openId,
-      },
+      data: datas,
       success: function (res) {
         console.log(res);
         if (res.data == 'succ') {

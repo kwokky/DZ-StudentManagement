@@ -284,9 +284,16 @@ Page({
             wx.hideLoading();
             wx.showModal({
               title: '提示',
-              content: '家庭地址查询无结果',
+              content: '家庭地址查询无结果，将启用非正常确认到家。',
               showCancel: false,
-            })
+              success: function (res) {
+                if (res.confirm) {
+                  _this.setData({
+                    flag: '确认到家（非正常）'
+                  });
+                }
+              }
+            });
           }
         }
       });
