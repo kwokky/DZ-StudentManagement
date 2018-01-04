@@ -40,7 +40,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getStuRate',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getStuRate',
       data: {
         openid: getApp().globalData.openId,
         role: 'teacher',

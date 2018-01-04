@@ -19,7 +19,7 @@ Page({
     })
     var _this = this;
    wx.request({
-     url: 'https://www.yanyufanchen.com/api/wxapi/getleaveinfo',
+     url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getleaveinfo',
      data:{
       id:options.id,
      },
@@ -43,7 +43,7 @@ Page({
       mask:true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/upleavestatus',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/upleavestatus',
       data:{
         id:_this.data.leaveinfo.id,
         status: e.target.dataset.val,

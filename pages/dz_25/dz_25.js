@@ -44,7 +44,7 @@ Page({
        title: '获取中...',
      })
    wx.request({
-     url: 'https://www.yanyufanchen.com/api/wxapi/getStuRateinfo',
+     url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getStuRateinfo',
      data:{
        id : options.id,
        find:'one',
@@ -131,7 +131,7 @@ Page({
       mask:true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/addRate',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/addRate',
       data: {
         id: e.detail.target.dataset.id,
         data: e.detail.value,

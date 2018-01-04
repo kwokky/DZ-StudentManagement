@@ -6,7 +6,7 @@
  </view>
   <view class='location' wx:if="{{flag == '确认到家'  || flag == '确认到家（非正常）'}}">
     <text>家庭位置：</text>
-    <text>{{homePlace}}</text>
+    <text>{{homePlace}}</text> 
  </view> 
  <view class='location' wx:if="{{flag == '已确认'}}">
     <text>确定位置：</text>

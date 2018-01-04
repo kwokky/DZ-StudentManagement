@@ -27,7 +27,7 @@ Page({
     })
    
    wx.request({
-     url: 'https://www.yanyufanchen.com/api/wxapi/getCheckHomeInfo',
+     url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getCheckHomeInfo',
      data:{
        sid: _this.data.sid,
        weeks: _this.data.weeks,
@@ -70,7 +70,7 @@ Page({
       title: '确认中...',
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/teacherCheckStudentIsHome',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/teacherCheckStudentIsHome',
       data: {
         sid: _this.data.sid,
         weeks: _this.data.weeks,

@@ -76,7 +76,7 @@ Page({
     }else{
       var id = this.data.id;
       wx.request({
-        url: 'https://www.yanyufanchen.com/api/wxapi/scoreUpdate',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/scoreUpdate',
         data: {
           data: e.detail.value,
           id: id,
@@ -129,7 +129,7 @@ Page({
       console.log(id);
       var _this = this;
       wx.request({
-        url: 'https://www.yanyufanchen.com/api/wxapi/getGrow',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getGrow',
         data: {
           id: id,
           typeid:0,

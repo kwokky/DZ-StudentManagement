@@ -19,7 +19,7 @@ Page({
     })
     var _this=this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/buttonstatus',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/buttonstatus',
       success:function(res){
         console.log(res);
         wx.hideLoading();
@@ -132,7 +132,7 @@ Page({
         mask:true,
       })
       wx.request({
-        url: 'https://www.yanyufanchen.com/api/wxapi/adduser',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/adduser',
         data: {
           role: val,    //所选角色
           openid:getApp().globalData.openId,  //用户openid

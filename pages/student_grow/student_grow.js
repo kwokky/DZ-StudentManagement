@@ -67,7 +67,7 @@ Page({
       mask: true,
     });
     wx.request({    //首先请求当前Bar数据
-      url: 'https://www.yanyufanchen.com/api/wxapi/getGrow',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getGrow',
       data: {
         uid: _this.data.uid,
         typeid: e.detail.current,
@@ -168,7 +168,7 @@ Page({
                 title: '删除中...',
               })
               wx.request({    //请求删除
-                url: 'https://www.yanyufanchen.com/api/wxapi/delGrow',
+                url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/delGrow',
                 data: {
                   id: caozuoid,
                   table: _this.data.currentTab == 0 ? 'score' : 'grow',
@@ -243,7 +243,7 @@ Page({
     
     setTimeout(function() {
       wx.request({    //首先请求当前Bar数据
-        url: 'https://www.yanyufanchen.com/api/wxapi/getGrow',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getGrow',
         data: {
           uid: _this.data.uid,
           typeid: _this.data.currentTab,
@@ -378,7 +378,7 @@ Page({
         mask:true,
       })
       wx.request({
-        url: 'https://www.yanyufanchen.com/api/wxapi/getGrow',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getGrow',
         data: {
           uid: uid,
           sname: searchVal,
@@ -451,7 +451,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getGrow',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getGrow',
       data: {
         uid: _this.data.uid,
         page: page,

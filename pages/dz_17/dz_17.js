@@ -31,7 +31,7 @@ Page({
       mask:true,
     })
     wx.request({      //获取家庭位置
-      url: 'https://www.yanyufanchen.com/api/wxapi/getuserinfo',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getuserinfo',
       data:{
         openid: getApp().globalData.openId,
         role:'student',
@@ -209,7 +209,7 @@ Page({
                 return;
               }
               wx.request({      //请求开发接口
-                url: 'https://www.yanyufanchen.com/api/wxapi/conhome',
+                url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/conhome',
                 data: {
                   openid: getApp().globalData.openId,
                   adress: _this.data.nowPlace,
@@ -301,7 +301,7 @@ Page({
 
     if(type == 'no') {
       wx.request({      //请求开发接口
-        url: 'https://www.yanyufanchen.com/api/wxapi/conhome',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/conhome',
         data: {
           openid: getApp().globalData.openId,
           adress: _this.data.nowPlace,

@@ -72,7 +72,7 @@ Page({
         }
         /*上传图片开始*/
         wx.uploadFile({
-          url: 'https://www.yanyufanchen.com/api/wxapi/checkShool',
+          url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/checkShool',
           filePath: _this.data.photo,
           name: 'userimg',
           formData: {
@@ -169,7 +169,7 @@ Page({
     // return;
     _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/ischeckShool',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/ischeckShool',
       data:{
         openid:getApp().globalData.openId,
         id: options.id ? options.id : '',

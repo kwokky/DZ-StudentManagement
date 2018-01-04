@@ -18,7 +18,7 @@ Page({
     })
     var _this = this;
   wx.request({
-    url: 'https://www.yanyufanchen.com/api/wxapi/getDormPerson',
+    url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getDormPerson',
     data:{
       dorm:options.dorm,
     },

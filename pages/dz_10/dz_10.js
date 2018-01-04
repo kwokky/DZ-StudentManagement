@@ -27,7 +27,7 @@ Page({
     });
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekShoolList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekShoolList',
       data:{
         find: 'class',
         openid:getApp().globalData.openId,

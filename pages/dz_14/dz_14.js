@@ -25,7 +25,7 @@ Page({
     })
     var _this = this;
       wx.request({
-        url: 'https://www.yanyufanchen.com/api/wxapi/getTeacherinfo',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getTeacherinfo',
         data:{
           openid:getApp().globalData.openId,
         },

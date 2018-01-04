@@ -142,7 +142,7 @@ Page({
       })
       /*实例化结束*/
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getuserinfo',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getuserinfo',
       data:{
         openid:getApp().globalData.openId,
         role:'teacher',
@@ -276,7 +276,7 @@ Page({
           mask: true,
         })
         wx.uploadFile({
-          url: 'https://www.yanyufanchen.com/api/wxapi/upphoto',
+          url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/upphoto',
           filePath: src,
           name: 'userimg',
           formData: {
@@ -370,7 +370,7 @@ Page({
    })
 
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/upuserinfo',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/upuserinfo',
       data:{
         datas:value,
         openid: getApp().globalData.openId,

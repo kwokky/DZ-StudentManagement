@@ -1,16 +1,68 @@
-<!--dz_1.wxml-->
-<view class="container">
-  <view class="wel-info">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image class="wel-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="wel-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="wel-bottom">
-    <text class="wel-font">大智周末学生跟踪平台</text>
-  </view>
-  <view class="wel-login">
-    <text bindtap='comein'>点击进入</text>
+<!--pages/test/test.wxml-->
+<view class='container'>
+  <view class='wrap'>
+      <view class='white-circle'>
+          <view class='main-text' bindtap='comein'>
+              <text style='margin:0 auto;font-size:45rpx;font-weight:bold'>点击进入</text>
+          </view>
+      </view> 
+
+      <view class='bi'>
+        <view class='item-wrap'>
+          <view class='wire'>
+            <image src='../../sources/images/jiantou.png' class='jiantou'></image>
+          </view>
+          <view class='item-text' animation="{{animationData}}"> 
+            <text style='margin:0 auto;font-size:30rpx'>老师</text>
+          </view> 
+        </view>
+
+        <view class='item-wrap'>
+          <view class='wire'>
+            <image src='../../sources/images/jiantou.png' class='jiantou'></image>
+          </view>
+          <view class='item-text'>
+            <text style='margin:0 auto;font-size:30rpx;transform: rotate(-60deg);'>请假</text>
+          </view> 
+        </view>
+
+      <view class='item-wrap'>
+          <view class='wire'>
+            <image src='../../sources/images/jiantou.png' class='jiantou'></image>
+          </view>
+          <view class='item-text'>
+            <text style='margin:0 auto;font-size:30rpx;transform: rotate(-120deg);'>周末回家</text>
+          </view> 
+        </view>
+
+        <view class='item-wrap'>
+          <view class='wire'>
+            <image src='../../sources/images/jiantou.png' class='jiantou'></image>
+          </view>
+          <view class='item-text'>
+            <text style='margin:0 auto;font-size:30rpx;transform: rotate(-180deg);'>宿舍统计</text>
+          </view> 
+        </view>
+        
+        <view class='item-wrap'>
+          <view class='wire'>
+            <image src='../../sources/images/jiantou.png' class='jiantou'></image>
+          </view>
+          <view class='item-text'>
+            <text style='margin:0 auto;font-size:30rpx;transform: rotate(-240deg);'>成长记录</text>
+          </view> 
+        </view>
+        
+      <view class='item-wrap'>
+        <view class='wire'>
+          <image src='../../sources/images/jiantou.png' class='jiantou'></image>
+        </view>
+        <view class='item-text'>
+          <text style='margin:0 auto;font-size:30rpx;transform: rotate(-300deg);'>学生</text>
+        </view> 
+      </view> 
+      </view>
+
+      
   </view>
 </view>

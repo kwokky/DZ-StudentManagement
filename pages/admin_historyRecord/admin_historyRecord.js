@@ -31,7 +31,7 @@ Page({
     })
     var that = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekHistory',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHistory',
       data:{},
       success:function(res){
         console.log(res.data);

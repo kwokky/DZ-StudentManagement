@@ -56,7 +56,7 @@ Page({
     // console.log(this.data.page);
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekHomeConfirm',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeConfirm',
       data: {
         page: _this.data.page,
         week: week
@@ -171,7 +171,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekHomeConfirm',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeConfirm',
       data: {
         week: _this.data.week,
         content: searchtxt,

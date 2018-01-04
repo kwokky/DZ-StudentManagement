@@ -56,7 +56,7 @@ Page({
     // console.log(this.data.page);
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getStuRate',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getStuRate',
       data: {
           role:'admin',
           page:_this.data.page,
@@ -146,7 +146,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getStuRate',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getStuRate',
       data: {
         content: searchtxt,
         role:searchtxt ? 'search' : 'admin',

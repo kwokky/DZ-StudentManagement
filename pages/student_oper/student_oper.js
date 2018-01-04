@@ -60,7 +60,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/cGrow',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/cGrow',
       data: {
         id: _this.data.id,
         type: _this.data.userinfo.length == 0 ? 'add' :'update',
@@ -127,7 +127,7 @@ Page({
       mask: true,
     });
     wx.request({    //请求数据
-      url: 'https://www.yanyufanchen.com/api/wxapi/getGrow',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getGrow',
       data: {
         uid: options.upid,
         typeid: 3,

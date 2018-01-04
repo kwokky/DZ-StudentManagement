@@ -114,7 +114,7 @@ Page({
       mask:true,
     });
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/addleave',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/addleave',
       data:{
         openid: getApp().globalData.openId,
         starttime: _this.data.startdate,

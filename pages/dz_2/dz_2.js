@@ -18,7 +18,7 @@ Page({
       mask:true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getuserinfo',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getuserinfo',
       data: {
         openid: getApp().globalData.openId,
         role: 'teacher',

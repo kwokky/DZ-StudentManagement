@@ -39,7 +39,7 @@ Page({
     });
     var _this = this;
     wx.request({      //按钮是否启用接口
-      url: 'https://www.yanyufanchen.com/api/wxapi/backHomeBtn',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/backHomeBtn',
       data:datas,
       success:function(res){
         wx.hideLoading();
@@ -155,7 +155,7 @@ Page({
     }
     /*调用接口开始*/
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/backhome',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/backhome',
       data: datas,
       success: function (res) {
         switch (res.data) {
@@ -206,7 +206,7 @@ Page({
       title: '',
     });
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/backhomeout',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/backhomeout',
       data: datas,
       success: function (res) {
         console.log(res);

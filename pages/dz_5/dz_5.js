@@ -77,7 +77,7 @@ Page({
        }
      }
      wx.request({
-       url: 'https://www.yanyufanchen.com/api/wxapi/getuserinfo',
+       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getuserinfo',
        data:datas,
        success:function(res){
          console.log(res);
@@ -331,7 +331,7 @@ Page({
       mask:true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/upuserinfo',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/upuserinfo',
       data:{
         openid:getApp().globalData.openId,
         datas:d.detail.value,
@@ -417,7 +417,7 @@ Page({
           mask: true,
         })
         wx.uploadFile({
-          url: 'https://www.yanyufanchen.com/api/wxapi/upphoto',
+          url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/upphoto',
           filePath: src,
           name: 'userimg',
           formData: {

@@ -24,7 +24,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekShoolList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekShoolList',
       data: {
         find: 'all',
       },
@@ -91,7 +91,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekShoolList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekShoolList',
       data: {
         openid: getApp().globalData.openId,
         content: searchtxt,
@@ -145,7 +145,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekShoolList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekShoolList',
       data: {
         content: searchtxt,
         find: searchtxt ? 'search' : 'all',
@@ -187,7 +187,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekShoolList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekShoolList',
       data: {
         content: searchtxt,
         find: searchtxt ? 'search' : 'all',

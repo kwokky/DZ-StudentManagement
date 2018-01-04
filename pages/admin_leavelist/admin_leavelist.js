@@ -29,7 +29,7 @@ Page({
     }) 
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getleave',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getleave',
       data:{
         role:'admin',
       },
@@ -68,7 +68,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getleave',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getleave',
       data: {
         role: 'admin',
         page: _this.data.page - 1,
@@ -108,7 +108,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getleave',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getleave',
       data: {
         role: 'admin',
         page: _this.data.page + 1,

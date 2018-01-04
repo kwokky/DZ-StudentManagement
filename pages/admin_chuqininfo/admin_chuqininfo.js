@@ -23,7 +23,7 @@ Page({
       title: '获取中...',
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getStuRateinfo',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getStuRateinfo',
       data:{
         class:_this.data.userinfo.class,
         week:options.week ? options.week : '', 

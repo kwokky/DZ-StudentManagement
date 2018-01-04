@@ -208,7 +208,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekHomeCount',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeCount',
       data: {
         week:_this.data.week,
         content: searchtxt,
@@ -257,7 +257,7 @@ Page({
       mask: true,
     });
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekLeaveCount',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekLeaveCount',
       data: {
         week: _this.data.week,
         content: searchtxt,
@@ -343,7 +343,7 @@ Page({
     console.log(this.data.week);
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekHomeCount',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeCount',
       data: {
         page: _this.data.page0,
         week: week
@@ -447,7 +447,7 @@ Page({
     // console.log(this.data.page);
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekLeaveCount',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekLeaveCount',
       data: {
         page: _this.data.page1,
         week: week

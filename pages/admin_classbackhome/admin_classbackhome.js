@@ -58,7 +58,7 @@ Page({
     // console.log(this.data.page);
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekHomeList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeList',
       data: {
         page: _this.data.page,
         classes: classes,
@@ -190,7 +190,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/weekHomeList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeList',
       data: {
         classes:_this.data.class,
         content: searchtxt,

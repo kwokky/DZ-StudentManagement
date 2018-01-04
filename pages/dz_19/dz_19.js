@@ -22,7 +22,7 @@ Page({
     var _this = this;
     console.log(options);
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/DormList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/DormList',
       data:{
         block:options.block,
       },
@@ -74,7 +74,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/DormList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/DormList',
       data: {
         block: _this.data.block,
         page: _this.data.page - 1,
@@ -107,7 +107,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/DormList',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/DormList',
       data: {
         block: _this.data.block,
         page: _this.data.page + 1,

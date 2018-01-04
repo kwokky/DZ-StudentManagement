@@ -16,10 +16,8 @@
     "pages/dz_25/dz_25",
     "pages/dz_18/dz_18",
     "pages/dz_20/dz_20",
-    
     "pages/dz_5/dz_5",
     "pages/dz_3/dz_3",
-    
     "pages/dz_15/dz_15",
     "pages/dz_11/dz_11",
     "pages/dz_12/dz_12",
@@ -37,7 +35,6 @@
     "pages/admin_classshool/admin_classshool",
     "pages/admin_classbackhome/admin_classbackhome",
     "pages/dz_6/dz_6",
-    
     "pages/dz_19/dz_19",
     "pages/dz_21/dz_21",
     "pages/dz_7/dz_7",
@@ -48,7 +45,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "dz学生管理",
+    "navigationBarTitleText": "大智学生管理平台",
     "navigationBarTextStyle": "white"
   },
   "networkTimeout": {

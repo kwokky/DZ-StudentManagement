@@ -30,7 +30,7 @@ Page({
     })
     var _this=this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getstulist',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getstulist',
       data:{
         openid:getApp().globalData.openId,
         role:getApp().globalData.role,
@@ -99,7 +99,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getstulist',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getstulist',
       data: {
         openid: getApp().globalData.openId,
         content: searchtxt,
@@ -154,7 +154,7 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getstulist',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getstulist',
       data: {
         openid: getApp().globalData.openId,
         role: getApp().globalData.role,
@@ -200,7 +200,7 @@ Page({
     })
     var _this=this;
     wx.request({
-      url: 'https://www.yanyufanchen.com/api/wxapi/getstulist',
+      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getstulist',
       data: {
         openid: getApp().globalData.openId,
         role: getApp().globalData.role,
