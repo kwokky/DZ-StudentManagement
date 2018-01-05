@@ -17,7 +17,7 @@
   font-size: 40rpx;
   font-weight: bold;
   display:flex;
-   position: relative;
+  position: relative;
 }
 .cate-content:nth-child(2) .cate-block:nth-child(1),.cate-content:nth-child(3) .cate-block:nth-child(1) {
   border-right:1px solid #CCC;
@@ -40,11 +40,9 @@
 .teacher-phone {
   border-bottom: 1px solid #ccc;
   padding: 30rpx 40rpx;
-  width: 100%;
   color: #393939;
   font-size: 30rpx;
   justify-content: center;
-  
 }
 /*导航点击样式*/
 .nav-hover {

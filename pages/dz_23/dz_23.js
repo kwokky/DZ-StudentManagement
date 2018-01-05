@@ -80,9 +80,10 @@ Page({
             adress: _this.data.nowadress,
           },
           success: function (res) {
-            var result = JSON.parse(res.data);
-            console.log(res);
-            switch(result){
+           console.log(res);
+           var result = JSON.parse(res.data);
+            
+           switch (result){
               case 'succ' :
                 wx.showToast({
                   title: '打卡成功',
@@ -152,7 +153,6 @@ Page({
             showCancel: false,
           })
         }
-
       }
     });
         /*路线距离计算接口结束*/

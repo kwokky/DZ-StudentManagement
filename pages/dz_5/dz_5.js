@@ -40,7 +40,9 @@ Page({
         width: 300, // 裁剪框宽度
         height: 300 // 裁剪框高度
       }
-    }
+    },
+    major: ['软件部', '电商部', '数字媒体部', '财经部', '信息部'],
+    majorIndex:false,
   },
 
   /**
@@ -139,6 +141,14 @@ Page({
          if(res.data.openid != getApp().globalData.openId){
             myflag = false;
          }
+
+         var majorindex;
+         for (let i=0 ;i <_this.data.major.length ; i++) {
+           if (_this.data.major[i] == res.data.major) {
+             majorindex = i;
+             break;
+           }
+         }
          console.log(classarr);
           _this.setData({
             user:res.data,
@@ -151,6 +161,7 @@ Page({
             nationstr: strnation,
             riliindex:res.data.rili=='农历' ? 0 : 1 ,
             my:myflag,
+            majorIndex:majorindex,
           })
           wx.hideLoading();
        },
@@ -215,6 +226,12 @@ Page({
   bindclassChange: function (e) {
     this.setData({
       classIndex: e.detail.value
+    })
+  },
+  //选择专业
+  bindmajorChange: function (e) {
+    this.setData({
+      majorIndex: e.detail.value
     })
   },
   //选择出生日期

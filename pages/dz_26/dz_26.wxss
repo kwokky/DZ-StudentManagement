@@ -67,15 +67,24 @@
 .page {
   display: flex;
   justify-content: space-between;
-  width:100%;
-  
+  width: 80%;
 }
-.page,button {
+.page {
   font-size: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding-left:40px;
-  padding-right:40px;
+  padding-left:40rpx;
+  padding-right:40rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+button {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:700rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
 }
 .pagenum{
   margin-top: 20px;

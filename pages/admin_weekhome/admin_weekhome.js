@@ -82,7 +82,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {  // 如果高度达不到窗口高度 则设置为窗口高度
         if (height < res.windowHeight) {
-          height = res.windowHeight - 40;
+          height = res.windowHeight;
         }
       },
     })

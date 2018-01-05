@@ -1,16 +1,15 @@
 {
   "pages": [
-    "pages/dz_2/dz_2",
     "pages/dz_1/dz_1",
+    "pages/dz_2/dz_2",
     
     
-    
+    "pages/dz_5/dz_5",
     "pages/admin_menu/admin_menu",
+    "pages/dz_26/dz_26",
     "pages/dz_16/dz_16",
     "pages/dz_14/dz_14",
-    "pages/dz_26/dz_26",
     "pages/admin_historyRecord/admin_historyRecord",
-    "pages/dz_5/dz_5",
     "pages/dz_10/dz_10",
     "pages/dz_17/dz_17",
     "pages/student_grow/student_grow",

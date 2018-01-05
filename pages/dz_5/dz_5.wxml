@@ -50,7 +50,10 @@
   </view>
 <view class="student-row">
     <text class="student-title">专业:</text>
-    <input disabled='{{user.status==1 || my==false  ? true : false}}' name="major"  type='text' value='{{user.major}}'class='stu-val stu-long-width'></input>
+    <!-- <input disabled='{{user.status==1 || my==false  ? true : false}}' name="major"  type='text' value='{{user.major}}'class='stu-val stu-long-width'></input> -->
+    <picker disabled='{{user.status==1 || my==false  ? true : false}}'   bindchange="bindmajorChange" name="major" value="{{major[majorIndex]}}" range="{{major}}" class='stu-val stu-long-width'>
+      {{major[majorIndex] ? major[majorIndex] : '请选择'}}
+  </picker>
   </view>
 <view class="student-row">
     <text class="student-title">学号:</text>
