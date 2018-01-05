@@ -157,23 +157,28 @@ Page({
           classarr[1].push(res.data.classarr[i]['id']);
         }
 
-        var classnum = res.data.class.split(","); //字符分割 
-        var a = [];
-        for (i = 0; i < classnum.length; i++){
-          if(classnum[0] == 1) {
-            a.push(i);
-            classs = 1;
-            classindex[0] = 0;
-            break;
-          }
-          for (var j = 0; j < classarr[1].length; j++) {
-            if (classarr[1][j] == classnum[i]) {
-              classindex[i]=j;
+        if (res.data.class) {
+          var classnum = res.data.class.split(","); //字符分割 
+          var a = [];
+          for (i = 0; i < classnum.length; i++) {
+            if (classnum[0] == 1) {
+              a.push(i);
+              classs = 1;
+              classindex[0] = 0;
+              break;
             }
+            for (var j = 0; j < classarr[1].length; j++) {
+              if (classarr[1][j] == classnum[i]) {
+                classindex[i] = j;
+              }
+            }
+            classs++;
+            a.push(i);
           }
-          classs++;
-          a.push(i);
+        }else {
+          a=['请选择'];
         }
+        
 
         _this.setData({
            user:res.data,
@@ -362,12 +367,34 @@ Page({
    
    classstr = classstr.substr(0, classstr.length-1);
    value['class'] = classstr;
-   console.log(value);
    
+   if (!value.tname) {
+     wx.showToast({
+       title: '请填写姓名',
+       image: '../../sources/images/error.png',
+     });
+     return;
+   }
+
+   if (!(/^1[34578]\d{9}$/.test(value.telphone))) {
+     wx.showToast({
+       title: '手机号不合法',
+       image: '../../sources/images/error.png',
+     });
+     return;
+   }
+   if (!value.class) {
+     wx.showToast({
+       title: '请选择班级',
+       image: '../../sources/images/error.png',
+     });
+     return;
+   }
+
    wx.showLoading({
      title: '提交中...',
      mask:true,
-   })
+   });
 
     wx.request({
       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/upuserinfo',

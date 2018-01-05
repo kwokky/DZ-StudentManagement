@@ -3,7 +3,7 @@
   <view class="leave-list-tr">
     <view class='leave-list-row th'>出行方式</view>
     <view class='leave-list-row th second-width'>提交日期</view>
-    <view class='leave-list-row th three-width'>操作</view>
+    <view class='leave-list-row th three-width'>状态</view>
   </view>
   <block wx:for="{{info}}" wx:key="unique">
     <view class="leave-list-tr">

@@ -89,24 +89,28 @@ Page({
             //设置全局变量
             if (!res.data.role) {    //设置跳转页面
               getApp().globalData.roleurl = '/pages/dz_21/dz_21';
+              getApp().globalData.openId = res.data.openid;
+            } else {
+              if (res.data.role == 'student') {    //设置跳转页面
+                getApp().globalData.roleurl = '/pages/dz_14/dz_14';
+              }
+              if (res.data.role == 'teacher') {    //设置跳转页面
+                getApp().globalData.roleurl = '/pages/dz_2/dz_2';
+              }
+              if (res.data.role == 'boss') {    //设置跳转页面
+                getApp().globalData.roleurl = '/pages/admin_menu/admin_menu';
+              }
+              getApp().globalData.role = res.data.role;
+              getApp().globalData.openId = res.data.openid;
+              //设置缓存
+              wx.setStorageSync('openId', getApp().globalData.openId);
+              wx.setStorageSync('role', getApp().globalData.role);
+              wx.setStorageSync('roleurl', getApp().globalData.roleurl);
             }
-            if (res.data.role == 'student') {    //设置跳转页面
-              getApp().globalData.roleurl = '/pages/dz_14/dz_14';
-            }
-            if (res.data.role == 'teacher') {    //设置跳转页面
-              getApp().globalData.roleurl = '/pages/dz_2/dz_2';
-            }
-            if (res.data.role == 'boss') {    //设置跳转页面
-              getApp().globalData.roleurl = '/pages/admin_menu/admin_menu';
-            }
-            getApp().globalData.role = res.data.role;
-            getApp().globalData.openId = res.data.openid;
-
-            //设置缓存
-            wx.setStorageSync('openId', getApp().globalData.openId);
-            wx.setStorageSync('role', getApp().globalData.role);
-            wx.setStorageSync('roleurl', getApp().globalData.roleurl);
             wx.hideLoading();
+
+            
+            
           },
           fail: function (err) {
             wx.hideLoading();

@@ -122,6 +122,7 @@ Page({
   onShareAppMessage: function () {
   
   },
+
   adduser:function(e){
     var val = e.currentTarget.dataset.val;
     if(!val){        // 如果没有值则无角色启用
@@ -142,6 +143,10 @@ Page({
           if (res.data.msg == 'student') {
             getApp().globalData.roleurl = '/pages/dz_14/dz_14';
             getApp().globalData.role = 'student';
+            //设置缓存
+            wx.setStorageSync('openId', getApp().globalData.openId);
+            wx.setStorageSync('role', 'student');
+            wx.setStorageSync('roleurl', '/pages/dz_14/dz_14');
             wx.redirectTo({
               url: '/pages/dz_14/dz_14',
             })
@@ -149,6 +154,10 @@ Page({
           if (res.data.msg == 'teacher') {
             getApp().globalData.roleurl = '/pages/dz_2/dz_2';
             getApp().globalData.role = 'teacher';
+            //设置缓存
+            wx.setStorageSync('openId', getApp().globalData.openId);
+            wx.setStorageSync('role', 'teacher');
+            wx.setStorageSync('roleurl', '/pages/dz_2/dz_2');
             wx.redirectTo({
               url: '/pages/dz_2/dz_2',
             })

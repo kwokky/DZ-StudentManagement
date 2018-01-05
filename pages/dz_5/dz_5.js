@@ -3,7 +3,7 @@ var QQMapWX = require("../../lib/qqmap-wx-jssdk.js");
 var qqmapsdk = new QQMapWX({
   key: 'LM5BZ-O4YWV-JC6P3-U66TW-ZKL63-WWBYU'
 });
-import weCropper from '../../dist/weCropper'
+import weCropper from '../../dist/weCropper' 
 
 const device = wx.getSystemInfoSync() // 获取设备信息
 const width = device.windowWidth // 示例为一个与屏幕等宽的正方形裁剪框
@@ -234,51 +234,59 @@ Page({
   //表单提交
   formSubmit:function(d){
     console.log(d);
-    if (!d.detail.value.username) {
-      wx.showToast({
-        title: '请输入姓名',
-        mask: false,
-        image: '../../sources/images/error.png',
-      });
-      return;
-    }
-    if (!d.detail.value.sex) {
-      wx.showToast({
-        title: '请选择性别',
-        mask: false,
-        image: '../../sources/images/error.png',
-      });
-      return;
-    }
-    if (!d.detail.value.dorm_id || d.detail.value.dorm_id == '-') {
-      wx.showToast({
-        title: '请输入宿舍号',
-        mask: false,
-        image: '../../sources/images/error.png',
-      });
-      return;
-    }
+    // if (!d.detail.value.username) {
+    //   wx.showToast({
+    //     title: '请输入姓名',
+    //     mask: false,
+    //     image: '../../sources/images/error.png',
+    //   });
+    //   return;
+    // }
+    // if (!d.detail.value.sex) {
+    //   wx.showToast({
+    //     title: '请选择性别',
+    //     mask: false,
+    //     image: '../../sources/images/error.png',
+    //   });
+    //   return;
+    // }
+    // if (!d.detail.value.dorm_id || d.detail.value.dorm_id == '-') {
+    //   wx.showToast({
+    //     title: '请输入宿舍号',
+    //     mask: false,
+    //     image: '../../sources/images/error.png',
+    //   });
+    //   return;
+    // }
     
-    if (!d.detail.value.iclass) {
-      wx.showToast({
-        title: '请选择班级',
-        mask: false,
-        image: '../../sources/images/error.png',
-      });
-      return;
-    }
-    if (!d.detail.value.major) {
-      wx.showToast({
-        title: '请输入专业',
-        mask: false,
-        image: '../../sources/images/error.png',
-      });
-      return;
-    }
+    // if (!d.detail.value.iclass) {
+    //   wx.showToast({
+    //     title: '请选择班级',
+    //     mask: false,
+    //     image: '../../sources/images/error.png',
+    //   });
+    //   return;
+    // }
+    // if (!d.detail.value.major) {
+    //   wx.showToast({
+    //     title: '请输入专业',
+    //     mask: false,
+    //     image: '../../sources/images/error.png',
+    //   });
+    //   return;
+    // }
 
-    if (!d.detail.value.birthday) {
+    // if (!d.detail.value.birthday) {
+    //   wx.showToast({
+    //     title: '请选择出生日期',
+    //     mask: false,
+    //     image: '../../sources/images/error.png',
+    //   });
+    //   return;
+    // }
+    if (!(/^1[34578]\d{9}$/.test(d.detail.value.stutel))) {
       wx.showToast({
-        title: '请选择出生日期',
+        title: '本人手机不合法',
         mask: false,
         image: '../../sources/images/error.png',
       });
@@ -292,9 +300,9 @@ Page({
       });
       return;
     }
-    if (!d.detail.value.stutel) {
+    if (!(/^1[34578]\d{9}$/.test(d.detail.value.famtel))) {
       wx.showToast({
-        title: '请输入手机号',
+        title: '家长手机不合法',
         mask: false,
         image: '../../sources/images/error.png',
       });
