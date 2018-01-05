@@ -1,4 +1,5 @@
 // pages/dz_7/dz_7.js
+var text = '';
 Page({
 
   /**
@@ -8,6 +9,7 @@ Page({
     checkhomeinfo:[],
     sid: '',
     weeks:'',
+    text : false,
     flag:'a',
   },
 
@@ -60,11 +62,18 @@ Page({
    })
   },
 
+
+  /*备注*/
+  inputs:function(e){
+    text = e.detail.value;
+  },
+
   /* * 
    * 确认学生到家
    * 
   */
   teachercheck:function() {
+
     var _this = this;
     wx.showLoading({
       title: '确认中...',
@@ -74,6 +83,7 @@ Page({
       data: {
         sid: _this.data.sid,
         weeks: _this.data.weeks,
+        text:text,
       },
       success: res => {
         console.log(res);
@@ -83,9 +93,9 @@ Page({
           wx.showToast({
             title: '确认成功',
           });
-          var up = 'checkhomeinfo.teacherCheck';
           _this.setData({
-              [up]:1,
+            ['checkhomeinfo.teacherCheck']:1,
+            ['checkhomeinfo.comment']:text,
           });
         }
         if (res.data == 'fail') {

@@ -57,4 +57,11 @@
   background: #000;
   color: #fff;
 }
+.textarea{
+  padding:10rpx;
+  border:1px solid;
+  height: 110rpx;
+  margin-left: 60rpx;
+  border-radius: 2px;
+}
 

@@ -24,6 +24,11 @@
     <text class="le-title">确认类型:</text>
     <text class='le-val' >{{checkhomeinfo.is_normal == 1 ? '正常打卡' : checkhomeinfo.teacherCheck == 1 ? '非正常打卡（老师已确认）' : '非正常打卡（老师未确认）'}}</text>
   </view>
+  <view class="le-row" wx:if="{{checkhomeinfo.is_normal == 0 }}">
+    <text class="le-title">备注:</text>
+    <textarea class='le-val textarea' bindinput='inputs' wx:if="{{checkhomeinfo.teacherCheck == 0}}" ></textarea>
+    <text class="le-val" wx:if="{{checkhomeinfo.teacherCheck == 1}}">{{checkhomeinfo.comment ? checkhomeinfo.comment : '无'}}</text>
+  </view>
 </view>
 
   <button class='teachercheck' wx:if="{{checkhomeinfo.teacherCheck == 0}}" bindtap='teachercheck'>确认学生到家</button>
