@@ -5,6 +5,7 @@ Page({
    */
   data: {
     flag:false,
+    check:false,
   },
 
   /**
@@ -25,11 +26,10 @@ Page({
       },
       success: function (res) {
         wx.hideLoading();
-        if(res.data.class){
             _this.setData({
-              flag:true,
+              flag: res.data.class ? true : false,
+              check: res.data.check ? true : false,
             })
-        }
       },
       fail: function (err) {
         console.log(err);
@@ -108,6 +108,14 @@ Page({
       wx.showToast({
         title: '请完善个人信息',
         image:'../../sources/images/error.png',
+      });
+      return;
+    }
+    if (!this.data.check) {
+      wx.showModal({
+        title: '提示',
+        content: '已完善信息，请等待管理员审核通过。',
+        showCancel:false,
       });
       return;
     }

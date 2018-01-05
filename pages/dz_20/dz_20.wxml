@@ -9,8 +9,9 @@
 
               <view class="username" >{{j.bed}} {{j.username}} 
                 <label style="{{j.leave ? 'color:green' : j.back ? 'color:green' : 'color:red'}}">
-                  {{j.username=='无人' ? '' : j.leave ? '(请假)' : j.back ? '(回家)' : '(留校)'}}
-                </label>
+                  {{j.username=='无人' ? '' : j.shixi ? '(实习)' :
+                   j.leave ? '(请假)' : j.back ? '(回家)' : '(留校)'}}
+                </label> 
               </view>
               <view class='hr'></view>   
 

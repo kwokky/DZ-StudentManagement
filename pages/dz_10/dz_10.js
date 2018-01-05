@@ -33,6 +33,7 @@ Page({
         openid:getApp().globalData.openId,
         classs: options.class ? options.class : '',
         week: options.week ? options.week : '',
+        year: options.year ? options.year : '',
       },
       success:function(res){
         console.log(res.data);

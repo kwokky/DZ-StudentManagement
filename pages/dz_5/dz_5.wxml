@@ -78,11 +78,11 @@
     <input disabled='{{user.status==1 || my==false  ? true : false}}' type='number' name="stutel" value='{{user.stutel}}' class='stu-val stu-long-width' bindtap='phoneCall' data-tel='{{user.stutel}}'></input>
   </view>
 
-  <view class="student-row">
+  <view class="student-row" wx:if="{{user.status==0&&my==true }}" >
     <text class="student-title">家长姓名:</text>
     <input disabled='{{user.status==1 || my==false  ? true : false}}'  type='text' name="famname" value='{{user.famname}}' class='stu-val stu-long-width'></input>
   </view>
-  <view class="student-row">
+  <view class="student-row" wx:if="{{user.status==0&&my==true }}" >
     <text class="student-title">家长手机号:</text>
     <input disabled='{{user.status==1 || my==false  ? true : false}}' type='number' name="famtel" value='{{user.famtel}}'  bindtap='phoneCall' data-tel='{{user.famtel}}' class='stu-val stu-long-width'></input>
   </view>

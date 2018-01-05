@@ -79,9 +79,9 @@
 }
 .lookbed{
   position: absolute;
-  bottom:6rpx;
+  bottom:53rpx;
   font-size: 28rpx;
-  right:0;
+  right:-110rpx;
   color:#f00;
 }
 .dorm{

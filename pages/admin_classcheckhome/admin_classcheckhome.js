@@ -43,7 +43,6 @@ Page({
     if (this.data.week !== undefined) {
       week = this.data.week
     }
-    // console.log(this.data.page);
     
     wx.request({
       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeContent',
@@ -51,6 +50,7 @@ Page({
         page: _this.data.page,
         class: _this.data.class ,
         week: week,
+        year:_this.data.year,
       },
       success: function (e) {
          console.log(e.data);
@@ -130,7 +130,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       class: options.class,
-      week: options.week
+      week: options.week,
+      year:options.year,
     });
     this.page();
   },

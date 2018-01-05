@@ -45,22 +45,22 @@
         <image src='../../sources/images/allperson.png' mode='widthFix' class='img' style='width:90rpx;left: 150rpx;'></image>
         <text class='cate-block-font'>全部留校名单</text>
     </navigator> -->
-    <navigator class='cate-block' url='../dz_18/dz_18' hover-class="none" >
+    <view class='cate-block' data-url='../dz_18/dz_18'  bindtap='nav' >
         <image src='../../sources/images/dormlist.png' mode='widthFix' class='img'  style='width:90rpx;left: 150rpx;'></image>
         <text class='cate-block-font'>宿舍</text>
-    </navigator>
+    </view>
   </view>
 
 
   <view class="cate-content"> 
-    <navigator class='cate-block' url='../dz_24/dz_24' hover-class="none" >
+    <view class='cate-block' data-url='../dz_24/dz_24' bindtap='nav' >
         <image src='../../sources/images/chuqin.png' mode='widthFix' class='img'  style='width:80rpx;left: 150rpx;'></image>
         <text class='cate-block-font'>学生出勤</text>
-    </navigator>
-     <navigator class='cate-block' url='../dz_4/dz_4?type=grow' hover-class="none" >
+    </view>
+     <view class='cate-block' data-url='../dz_4/dz_4?type=grow' bindtap='nav' >
         <image src='../../sources/images/chengzhang.png' mode='widthFix' class='img'  style='width:65rpx;left: 150rpx;'></image>
         <text class='cate-block-font'>学生成长记录</text>
-    </navigator>
+    </view>
   </view>
 
 </view>

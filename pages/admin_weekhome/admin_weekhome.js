@@ -5,16 +5,18 @@ Page({
     // console.log(e.currentTarget.dataset.id);
     var classe = e.currentTarget.dataset.class;
     var week = e.currentTarget.dataset.week;
+    var year = this.data.year;
     wx.navigateTo({
-      url: '../admin_classbackhome/admin_classbackhome?class=' + classe + '&week=' + week,
+      url: `../admin_classbackhome/admin_classbackhome?class=${classe}&week=${week}&year=${year}`,
     })
   },
   showInfo1: function (e) {
     // console.log(e.currentTarget.dataset.id);
     var classe = e.currentTarget.dataset.class;
     var week = e.currentTarget.dataset.week;
+    var year = this.data.year;
     wx.navigateTo({
-      url: `../dz_10/dz_10?class=${classe}&week=${week}&find=all`,
+      url: `../dz_10/dz_10?class=${classe}&week=${week}&find=all&year=${year}`,
     })
   },
   
@@ -92,10 +94,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //获取日期是本年的第几天
-    var weekofyear = (((new Date()) - (new Date("2017-01-01"))) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
+    //获取日期是本年的第几周
+    var weekofyear = (((new Date()) - (new Date())) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
+    //获取年份
+    var year = new Date().getFullYear();
       this.setData({
         week: options.week ? options.week : weekofyear,
+        year: options.year ? options.year : year,
       });
     this.page0();
    
@@ -211,6 +216,7 @@ Page({
       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeCount',
       data: {
         week:_this.data.week,
+        year: _this.data.year,
         content: searchtxt,
       },
       success: function (res) {
@@ -261,6 +267,7 @@ Page({
       data: {
         week: _this.data.week,
         content: searchtxt,
+        year:_this.data.year,
       },
       success: function (res) {
         wx.hideLoading();
@@ -346,7 +353,8 @@ Page({
       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeCount',
       data: {
         page: _this.data.page0,
-        week: week
+        week: week,
+        year:_this.data.year,
       },
       success: function (e) {
         console.log(e.data);
@@ -450,7 +458,8 @@ Page({
       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekLeaveCount',
       data: {
         page: _this.data.page1,
-        week: week
+        week: week,
+        year: _this.data.year,
       },
       success: function (e) {
         // console.log(e.data);

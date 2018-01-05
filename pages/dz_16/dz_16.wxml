@@ -18,10 +18,12 @@
       <text wx:if="{{role == 'teacher'}}">老师啥时候改都行，尽情改。</text>
       <text wx:else>只能在周三或周四提交/撤销，路上请注意安全 :)</text>
     </view> 
-      
-
     <button class='sub' bindtap='sub' disabled='{{subbtn}}'>提交</button>
     <view class='hr'></view>
      <button class='rev' bindtap='backout' plain="true" disabled='{{revbtn}}'>撤销申请</button>
+
+     <view class='record' bindtap='record' wx:if="{{role != 'teacher'}}">
+        <view>我的申请记录</view>
+     </view> 
 </view>
 

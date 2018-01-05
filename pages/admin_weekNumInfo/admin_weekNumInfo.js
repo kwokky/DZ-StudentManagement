@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    week:''
+    week:'',
+    year:'',
   },
 
   /**
@@ -14,7 +15,8 @@ Page({
   onLoad: function (options) {
     // console.log(options.week);
     this.setData({
-      week:options.week
+      week:options.week,
+      year: options.year,
     });
     wx.setNavigationBarTitle({
       title: '第' + options.week + '周',

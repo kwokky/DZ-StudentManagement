@@ -3,21 +3,17 @@ Page({
 //跳转
   weekNumInfo:function(e){
     var week = e.currentTarget.dataset.week;
-    week = week.substring(0,week.length-1);
+    var year = e.currentTarget.dataset.year;
+   // week = week.substring(0,week.length-1);
     wx.redirectTo({
-      url: '../admin_weekNumInfo/admin_weekNumInfo?week='+week,
+      url: '../admin_weekNumInfo/admin_weekNumInfo?week=' + week + '&year=' + year,
     })
   },
   /**
    * 页面的初始数据
    */
   data: {
-    info:[
-      // {
-      //   weekNum: '45周'
-      // },
-      
-    ],
+    info:[],
     nowWeek:''
   },
 
@@ -34,10 +30,10 @@ Page({
       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHistory',
       data:{},
       success:function(res){
-        console.log(res.data);
+          console.log(res.data);
         that.setData({
           nowWeek:res.data.week,
-          info:res.data[0]
+          info:res.data[0],
         });
         wx.hideLoading();
       },

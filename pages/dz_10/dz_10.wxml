@@ -18,17 +18,25 @@
   <view style='width:91%;margin:0 auto 15px'wx:if="{{staySchoolList.boy.length}}">男：</view>
     <block wx:for="{{staySchoolList.boy}}" wx:key="unique">
        <view 
-       bindlongtap='changeLongSchoolStatus'
-       bindtap='changeSchoolStatus' 
-       bindtouchstart="bindTouchStart" 
-       bindtouchend="bindTouchEnd"
-       data-id="{{item.id}}" 
-       data-url="{{item.checkshool  ? '../dz_23/dz_23?id='+item.id : '../dz_5/dz_5?id='+item.id}}" 
+        bindlongtap='changeLongSchoolStatus'
+        bindtap='changeSchoolStatus' 
+        bindtouchstart="bindTouchStart" 
+        bindtouchend="bindTouchEnd"
+        data-id="{{item.id}}" 
+        data-url="{{item.checkshool  ? '../dz_23/dz_23?id='+item.id : '../dz_5/dz_5?id='+item.id}}" 
        class="{{item.checkshool ? 'a':'b'}}">{{item.username}}</view> 
     </block>
+
     <view style='width:91%;margin:0 auto 15px;clear:both' wx:if="{{staySchoolList.girl.length}}">女：</view>
     <block wx:for="{{staySchoolList.girl}}" wx:key="unique">
-       <navigator url="{{item.checkshool  ? '../dz_23/dz_23?id='+item.id : '../dz_5/dz_5?id='+item.id}}" class="{{item.checkshool ? 'a':'b'}}">{{item.username}}</navigator> 
+       <view 
+        bindlongtap='changeLongSchoolStatus'
+        bindtap='changeSchoolStatus' 
+        bindtouchstart="bindTouchStart" 
+        bindtouchend="bindTouchEnd"
+        data-id="{{item.id}}" 
+       data-url="{{item.checkshool  ? '../dz_23/dz_23?id='+item.id : '../dz_5/dz_5?id='+item.id}}" 
+       class="{{item.checkshool ? 'a':'b'}}">{{item.username}}</view> 
     </block>
   </view>
 </view>

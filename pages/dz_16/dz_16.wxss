@@ -53,3 +53,16 @@
   width:90%;
   margin-top: 70rpx;
 }
+
+/* 申请记录*/
+.record{
+    width:90%;
+    margin-top: 70rpx;
+}
+.record>view {
+  float: right;
+  padding: 15rpx 30rpx;
+  border-radius: 10rpx;
+  background: #909090;
+  color: #fff;
+}

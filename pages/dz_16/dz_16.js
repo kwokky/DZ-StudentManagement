@@ -71,6 +71,12 @@ Page({
     })
   },
 
+  record:function(){
+    wx.navigateTo({
+      url: '../dz_26/dz_26?openid=' + getApp().globalData.openId,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

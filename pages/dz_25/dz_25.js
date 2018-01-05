@@ -13,7 +13,11 @@ Page({
     },{
       name: '未到校',
       value: 0,
+    }, {
+        name: '已实习',
+        value: 2,
     }],
+    
     //开始时间
     startdate: myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate(),
     //结束时间
@@ -52,6 +56,14 @@ Page({
      success:function(res){
        wx.hideLoading();
         console.log(res);
+        if(res.data.endtime == '9999-12-31') {
+          var up = "status[2].checked";
+          _this.setData({
+            [up]: true,
+            show:1,
+          });
+          return;
+        }
         _this.setData({
           userinfo: res.data,
           startdate:res.data.begintime,

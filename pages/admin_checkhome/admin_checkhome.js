@@ -6,8 +6,9 @@ Page({
     // console.log(e.currentTarget.dataset.id);
     var classe = e.currentTarget.dataset.class;
     var week = e.currentTarget.dataset.week;
+    var year = this.data.year;
     wx.navigateTo({
-      url: '../admin_classcheckhome/admin_classcheckhome?class='+classe+'&week='+week,
+      url: `../admin_classcheckhome/admin_classcheckhome?class=${classe}&week=${week}&year=${year}`,
     })
   },
   //分页
@@ -59,7 +60,8 @@ Page({
       url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/weekHomeConfirm',
       data: {
         page: _this.data.page,
-        week: week
+        week: week,
+        year:_this.data.year,
       },
       success: function (e) {
         console.log(e.data);
@@ -133,9 +135,11 @@ Page({
    */
   onLoad: function (options) {
     //获取日期是本年的第几天
-    var weekofyear = (((new Date()) - (new Date("2017-01-01"))) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
+    var weekofyear = (((new Date()) - (new Date())) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
+    var year = new Date().getFullYear();
     this.setData({
       week: options.week ? options.week : weekofyear,
+      year: options.year ? options.year : year,
     });
     this.page();
     

@@ -62,7 +62,8 @@ Page({
       data: {
         page: _this.data.page,
         classes: classes,
-        week: week
+        week: week,
+        year:_this.data.year,
       },
       success: function (e) {
         
@@ -155,7 +156,8 @@ Page({
    
     this.setData({
       class: options.class,
-      week: options.week
+      week: options.week,
+      year:options.year,
     });
     this.page();
     
@@ -195,6 +197,7 @@ Page({
         classes:_this.data.class,
         content: searchtxt,
         week:_this.data.week,
+        year:_this.data.year,
       },
       success: function (res) {
         wx.hideLoading();

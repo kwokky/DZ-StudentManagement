@@ -12,7 +12,7 @@
     <radio-group bindchange="statusChange" name="status"> 
       <label wx:for="{{status}}" wx:key="unique"  class='le-val2'>
         <radio value="{{item.value}}" checked='{{item.checked}}'  />{{item.name}}
-      </label>
+      </label> 
     </radio-group>
 
 

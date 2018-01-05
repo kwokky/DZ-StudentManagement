@@ -108,7 +108,7 @@ Page({
    */
   onLoad: function (options) {
     //获取日期是本年的第几周
-    var weekofyear = (((new Date()) - (new Date("2017-01-01"))) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
+    var weekofyear = (((new Date()) - (new Date())) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
     this.setData({
       week: options.week ? options.week : weekofyear,
     });

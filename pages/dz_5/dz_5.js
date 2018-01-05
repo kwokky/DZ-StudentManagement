@@ -300,9 +300,10 @@ Page({
       });
       return;
     }
-    if (!d.detail.value.idcate) {
+    var regexp = /^(([1][1-5])|([2][1-3])|([3][1-7])|([4][1-6])|([5][0-4])|([6][1-5])|([7][1])|([8][1-2]))\d{4}(([1][9]\d{2})|([2]\d{3}))(([0][1-9])|([1][0-2]))(([0][1-9])|([1-2][0-9])|([3][0-1]))\d{3}[0-9xX]$/;
+    if (!regexp.test(d.detail.value.idcate)) {
       wx.showToast({
-        title: '请输入身份证号',
+        title: '身份证号不合法',
         mask: false,
         image: '../../sources/images/error.png',
       });
@@ -327,7 +328,7 @@ Page({
         return;
     }
     wx.showLoading({
-      title: '修改中...',
+      title: '修改中...', 
       mask:true,
     })
     wx.request({

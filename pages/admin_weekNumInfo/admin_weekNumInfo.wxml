@@ -1,7 +1,7 @@
 <!--pages/weekNumInfo/weekNumInfo.wxml-->
 <view class='weekInfoWrap'>
   <!-- <navigator url='../admin_weekshool/admin_weekshool?week={{week}}'>学生留校</navigator> -->
-  <navigator url='../admin_weekhome/admin_weekhome?week={{week}}'>统计</navigator>
-  <navigator url='../admin_checkhome/admin_checkhome?week={{week}}'>回家确认</navigator>
-  <navigator url='../admin_chuqinlist/admin_chuqinlist?week={{week}}'>学生出勤</navigator>
+  <navigator url='../admin_weekhome/admin_weekhome?week={{week}}&year={{year}}'>统计</navigator>
+  <navigator url='../admin_checkhome/admin_checkhome?week={{week}}&year={{year}}'>回家确认</navigator>
+  <navigator url='../admin_chuqinlist/admin_chuqinlist?week={{week}}&year={{year}}'>学生出勤</navigator>
 </view>
