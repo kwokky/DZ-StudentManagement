@@ -1,5 +1,8 @@
 // pages/dz_7/dz_7.js
 var myDate = new Date();
+var Month = myDate.getMonth()+1 >= 10 ? `-${myDate.getMonth()+1}` : `-0${myDate.getMonth()+1}`;
+var Dates = myDate.getDate() >= 10 ? `-${myDate.getDate() + 1}` : `-0${myDate.getDate() + 1}`;
+
 Page({
 
   /**
@@ -19,9 +22,9 @@ Page({
     }],
     
     //开始时间
-    startdate: myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate(),
+    startdate: myDate.getFullYear() + Month + Dates,
     //结束时间
-    enddate: myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate(),
+    enddate: myDate.getFullYear() + Month + Dates,
     //控制页面显示
     show:false,
 
@@ -47,7 +50,7 @@ Page({
      wx.showLoading({
        title: '获取中...',
      })
-   wx.request({
+   wx.request({ 
      url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/getStuRateinfo',
      data:{
        id : options.id,
@@ -66,6 +69,7 @@ Page({
         }
         _this.setData({
           userinfo: res.data,
+          leaveReason: res.data.reason,
           startdate:res.data.begintime,
           enddate:res.data.endtime,
         })

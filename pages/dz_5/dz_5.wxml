@@ -4,7 +4,7 @@
 
 
    <form bindsubmit='formSubmit' wx:if="{{!distflag}}">
-<view style="{{bed ? 'display:none' : ''}}">
+<view style="{{bed ? 'display:none' : 'padding-bottom:50rpx;'}}">
 <view class='student-info-wrap-top'>
   <image class="stu-img" src="{{user.photo ? user.photo :'../../sources/images/defaultphoto.jpg'}}" background-size="cover"></image>
   <view class='student-lock' wx:if="{{my}}">{{user.status==1 || my==false ? '已锁定' : '未锁定'}}</view>
@@ -98,7 +98,7 @@
     <input disabled='{{true}}'   type='text' name="adress" value='{{user.adress}}' class='stu-val stu-long-width' style='width:450rpx'></input>
   </view>
 </view>
-    <button wx:if="{{user.status==0&&my==true }}" formType='submit' style='background:#1AAD19;color:#FFF;width:92%;margin-bottom: 20px;'>提交</button>
+    <button wx:if="{{user.status==0&&my==true }}" formType='submit' style='background:#1AAD19;color:#FFF;width:92%;'>提交</button>
 </view>
 </form>
 

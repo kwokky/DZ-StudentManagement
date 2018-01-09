@@ -33,6 +33,7 @@ App({
       }
     })
   },
+  //ooc0D0Vd7gSYWbx9FFioD1zF3irQ  teacher
   globalData: {
     userInfo: null,   //用户信息
     openId:'',   //用户openid

@@ -506,6 +506,24 @@ Page({
         })
         console.log(res);
       },
+      fail:function(err) {
+        if (err.errMsg == "chooseLocation:fail auth deny" || err.errMsg == "chooseLocation:fail:auth denied") {
+          wx.showModal({
+            title: '授权提示',
+            content: '请允许小程序获取你的地理位置，点击确定到授权页面。',
+            success:function(res) {
+              if(res.confirm) {
+                wx.openSetting({
+                  success:function(res) {
+                    console.log(res);
+                  }
+                })
+              }
+            }
+          })
+        }
+        console.log(err);
+      }
     })
   },
   /**
