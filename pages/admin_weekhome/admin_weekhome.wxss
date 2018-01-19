@@ -151,3 +151,8 @@ button {
 button::after{
   content: none;
 }
+.backhomecount {
+  width:90%;
+  margin: 0 auto;
+  font-size: 30rpx;
+}

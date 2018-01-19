@@ -8,7 +8,7 @@
    
   </view>
 
-  <view class="le-row">
+  <view class="le-row"> 
     <text class="le-title">性质：</text>
     <radio-group bindchange="xingzhiChange" name="status"> 
       <label wx:for="{{xingzhi}}" wx:key="unique"  class='le-val2'>

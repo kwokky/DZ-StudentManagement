@@ -51,15 +51,21 @@ Page({
   },
 
   swiperChange: function (e) {
+    if (e.detail.current == 1){
+      var height = this.swiperHeight(e.detail.current,this.data.weekshool_list.length);
+    } else {
+      var height = this.swiperHeight(e.detail.current, this.data.weekhome_list.length);
+    }
+    
     this.setData({
       currentTab: e.detail.current,
-      search:true,
+      search:true, 
+      swiperHei:height,
     })
     if (e.detail.current == 0) {
       if (!this.data.weekhome_list.length) {
         this.page0();
       }
-      
     }else{
       if (!this.data.weekshool_list.length) {
         this.page1();
@@ -77,7 +83,7 @@ Page({
   swiperHeight: function (c, l) {
     var height;
 
-      height = (l * 37) + 30 + 38 + 100;
+      height = (l * 37) + 30 + 38 + 140;
 
     wx.getSystemInfo({
       success: function (res) {  // 如果高度达不到窗口高度 则设置为窗口高度
@@ -95,7 +101,13 @@ Page({
    */
   onLoad: function (options) {
     //获取日期是本年的第几周
-    var weekofyear = (((new Date()) - (new Date())) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
+    var time, weekofyear, checkDate = new Date(new Date());
+    checkDate.setDate(checkDate.getDate() + 4 - (checkDate.getDay() || 7));
+    time = checkDate.getTime();
+    checkDate.setMonth(0);
+    checkDate.setDate(1);
+    weekofyear = Math.floor(Math.round((time - checkDate) / 86400000) / 7) + 1;
+
     //获取年份
     var year = new Date().getFullYear();
       this.setData({
@@ -387,6 +399,8 @@ Page({
           weekhome_list: e.data[0],
           page0: e.data.page,
           pages0: e.data.pages,
+          shoolcount : e.data.shoolcount,
+          homecount: e.data.homecount,
           swiperHei: height,
           flag: true,
         })
@@ -465,6 +479,7 @@ Page({
         // console.log(e.data);
         // return;
 
+        var height = _this.swiperHeight(_this.data.currentTab, e.data[0].length);
         if (e.data.msg !== undefined) {
           if (e.data.msg == 0) {
             wx.showToast({
@@ -494,6 +509,7 @@ Page({
           weekshool_list: e.data[0],
           page1: e.data.page,
           pages1: e.data.pages,
+          swiperHei:height,
           flag: true,
         })
         wx.hideLoading();

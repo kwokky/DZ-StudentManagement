@@ -134,13 +134,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //获取日期是本年的第几天
-    var weekofyear = (((new Date()) - (new Date())) / (24 * 60 * 60 * 7 * 1000) | 0) + 1;
-    var year = new Date().getFullYear();
-    this.setData({
-      week: options.week ? options.week : weekofyear,
-      year: options.year ? options.year : year,
-    });
+      //获取日期是本年的第几周
+      var time, weekofyear, checkDate = new Date(new Date());
+      checkDate.setDate(checkDate.getDate() + 4 - (checkDate.getDay() || 7));
+      time = checkDate.getTime();
+      checkDate.setMonth(0);
+      checkDate.setDate(1);
+      weekofyear = Math.floor(Math.round((time - checkDate) / 86400000) / 7) + 1;
+      var year = new Date().getFullYear();
+      this.setData({
+        week: options.week ? options.week : weekofyear,
+        year: options.year ? options.year : year,
+      });
     this.page();
     
   },

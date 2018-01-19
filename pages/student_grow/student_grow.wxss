@@ -13,7 +13,7 @@
   background: #fff;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 998;
 }  
 .tab-item {  
   width: 33.3%;  
@@ -25,6 +25,7 @@
   background: #fff;  
   margin-top: 100rpx;
   margin-bottom: 30px;
+  position: relative;
 }  
 .on {  
   color: #000;  
@@ -57,6 +58,7 @@
   overflow:hidden;
   justify-content: center;
   vertical-align: middle;
+  
 }
 .Btnwrap text{
  margin-left: 30rpx; 
@@ -96,7 +98,7 @@
   background: #3B3B3E;
   color: #fff;
   position: absolute;
-  z-index: 999;
+  z-index: 2000;
   transition: .3s all ease;
 }
 .float-chunk text{
@@ -120,6 +122,7 @@
   top: 35rpx;
   transform: rotate(46deg);
   z-index: -1;
+  left: 70rpx;
 }
 
 

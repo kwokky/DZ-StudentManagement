@@ -51,16 +51,36 @@ Page({
    
     if (this.data.addUpdate == 1){
       wx.request({
-        url: 'http://www.guokaiyuan.cn/lifeng/api/wxapi/scoreAdd',
+        url: 'https://shop.linyidz.cn/wechat/index.php/api/wxapi/scoreAdd',
         data: {
           data: e.detail.value,
           uid: uid,
         },
         success: function (res) {
-          wx.showToast({
-            title: '添加成功',
-            duration: 1500,
-          });
+          switch(res.data){
+            case 'succ' :
+              wx.showToast({
+                title: '添加成功',
+                duration: 1500,
+              });
+              break;
+            case 'fail':
+              wx.showToast({
+                title: '添加失败，请稍后重试',
+                duration: 1500,
+              });
+              return;
+              break;
+            case 'server error':
+              wx.showToast({
+                title: '服务器内部错误',
+                image:'../../sources/images/error.png',
+                duration: 1500,
+              });
+              return;
+              break;
+          }
+          
           var pages = getCurrentPages();
           var prePage = pages[pages.length - 2];
           prePage.setData({

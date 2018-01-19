@@ -7,11 +7,11 @@
     </view>
     <view class="te-row">
       <text class="te-title">考试分数:</text>
-      <input focus='{{focus}}' type="text" class='te-val' value='{{scoreInfo.score}}' confirm-type="done" name="score" />
+      <input focus='{{focus}}' type="number" class='te-val' value='{{scoreInfo.score}}' confirm-type="done" name="score" />
     </view>
     <view class="te-row">
       <text class="te-title">考试次数:</text>
-      <input focus='{{focus}}' type="text" class='te-val' value='{{scoreInfo.num}}' name="num" confirm-type="done"/>
+      <input focus='{{focus}}' type="number" class='te-val' value='{{scoreInfo.num}}' name="num" confirm-type="done"/>
     </view>
     <view class="te-row">
       <text class="te-title">考试日期:</text>

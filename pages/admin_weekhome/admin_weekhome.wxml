@@ -18,6 +18,7 @@
           <input placeholder='输入班级' class="{{search ? 'search-inpulong' : 'search-inputshort'}}" confirm-type="search" bindconfirm="search0" bindinput="bindinput"></input>
           </form>
       </view>
+      <view class='backhomecount'>总回家人数：{{homecount}}</view>
 
       <view bindtap='searchBtnstatus2' >
         <view class="container" wx:if="{{flag == true}}">
@@ -57,6 +58,7 @@
     <input placeholder='输入班级' class="{{search ? 'search-inpulong' : 'search-inputshort'}}" confirm-type="search" bindconfirm="search1" bindinput="bindinput"></input>
     </form>
 </view>
+<view class='backhomecount'>总留校人数：{{shoolcount}}</view>
 
 <view bindtap='searchBtnstatus2' wx:if="{{flag==true}}">
   <view class="container">
@@ -69,7 +71,7 @@
         </view>
         <block wx:for="{{weekshool_list}}" wx:key="unique">
           <view class="tr" bindtap='showInfo1' data-week='{{week}}' data-class='{{item.class}}'>
-            <view class="td">{{item.id}}</view>
+            <view class="td">{{index+1}}</view>
             <view class="td">{{item.class}}</view>
             <view class="td">{{item.num}}</view>
             <view class="td">

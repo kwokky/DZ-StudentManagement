@@ -134,12 +134,15 @@ Page({
    * 显示浮动框
   */
   Oper:function(e){
+    console.log('触发了');
     caozuoid = e.currentTarget.dataset.id;   //要修改的id
     this.setData({
       showfloatChunk: true,
       floatChunkLeft: e.detail.x - 50 > 0 ? e.detail.x - 50  : 0,
-      floatChunkTop: e.detail.y - 110 > 0 ? e.detail.y - 110 : 0,
-    })
+      floatChunkTop: e.detail.y - 59 > 0 ? e.detail.y - 59 : 0,
+    });
+    console.log(this.data.floatChunkLeft);
+    console.log(this.data.floatChunkTop);
   }, 
 
 
@@ -228,6 +231,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     if (options) {
       this.setData({
         username: options.username,
@@ -259,7 +263,7 @@ Page({
             _this.setData({
               [barname]: '',
               winHeight: height,
-            })
+            });
             wx.showModal({
               title: '提示',
               content: '没有这方面的信息，换个别的看看吧。',
@@ -272,7 +276,7 @@ Page({
               pages: res.data.pages,
             })
           }
-          console.log(res);
+          console.log(_this.data.List0);
         },
         fail: function (err) {
           wx.hideLoading();
